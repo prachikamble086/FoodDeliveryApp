@@ -1,0 +1,86 @@
+.partner-with-us-card {
+  display: flex;
+  position: relative;
+  width: 80%;
+  height: 20rem;
+  /* overflow: hidden; */
+  gap: 1rem;
+}
+
+.signup-with-us-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.signup-with-us-header {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  background-color: white;
+  color: black;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 0rem 0rem 1rem 1rem;
+  font-weight: 700;
+}
+
+.signup-with-us-method {
+  position: absolute;
+  left: 1rem;
+  /* color: white; */
+  color: white;
+  font-size: 1.5rem;
+  bottom: 4rem;
+}
+
+.signup-with-us-selection {
+  position: absolute;
+  left: 1rem;
+  color: white;
+  bottom: 6rem;
+  margin-top: 0.5rem;
+  color: #fc8a06;
+}
+
+.primary-button-join-app {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 1;
+  background-color: #fc8a06;
+  border-radius: 10rem;
+  width: 7rem;
+  height: 2rem;
+  color: white;
+}
+
+@media (max-width: 400px) {
+  .partner-with-us-card {
+    height: 14rem;
+  }
+
+  .signup-with-us-header {
+    font-size: 1rem;
+    background-color: white;
+    padding: 0.5rem;
+    top: 0;
+    border-radius: 0rem 0rem 1rem 1rem;
+    font-weight: 500;
+    color: black;
+  }
+
+  .signup-with-us-method,
+  .signup-with-us-selection {
+    /* bottom: 3.5rem; */
+    font-size: 0.9rem;
+  }
+
+  .primary-button {
+    bottom: 0.5rem;
+    left: 0.5rem;
+  }
+}

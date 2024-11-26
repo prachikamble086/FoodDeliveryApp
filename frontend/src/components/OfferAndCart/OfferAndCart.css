@@ -1,0 +1,131 @@
+.offer-and-cart {
+  background-color: #fafafa;
+  justify-content: space-between;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.offer {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 30%;
+}
+
+.offer-withourt-cart {
+  display: flex;
+}
+
+.offer-first {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.location {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  align-items: center;
+  justify-content: space-between;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.location-and-cart {
+  display: flex;
+}
+
+.cart-button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #028643;
+  width: 20rem;
+  height: 4rem;
+}
+
+.cart-image {
+  display: flex;
+  color: #ffffff;
+  align-items: center;
+}
+
+.shopping-basket {
+  margin-right: 0.5rem;
+}
+
+.address {
+  margin-left: 1rem;
+}
+
+.promo {
+  color: #fc8a06;
+}
+
+.mobile-design-login-up-beside-cart {
+  display: none;
+}
+
+.mobile-header {
+  display: none;
+}
+
+.mobile-design-location {
+  display: none;
+}
+
+@media (max-width: 400px) {
+  .offer-withourt-cart {
+    display: none;
+  }
+
+  .mobile-design-location {
+    display: flex;
+    align-items: center;
+    margin-right: 0;
+  }
+
+  /* .mobile-header {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem;
+    padding-left: 0;
+    overflow-x: hidden;
+  } */
+
+  .mobile-header {
+    display: none;
+  }
+  .mobile-design-login-up-beside-cart {
+    display: flex;
+    align-items: center;
+    background-color: #fc8a06;
+    color: #000000;
+    font-weight: 600;
+    justify-content: center;
+    height: 100%;
+    width: 12rem;
+  }
+
+  .mobile-design-login-up-beside-cart {
+    max-width: 100%;
+  }
+
+  .cart {
+    max-width: 100%;
+    width: 50%;
+  }
+
+  .mobile-design-location {
+    display: none;
+  }
+}

@@ -1,0 +1,17 @@
+.app-data {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  background-color: #fc8a06;
+  width: 25%;
+  padding-bottom: 1rem;
+}
+
+.app-data-number {
+  font-size: 4rem;
+}
+
+.app-data-info {
+  font-size: 1.5rem;
+}

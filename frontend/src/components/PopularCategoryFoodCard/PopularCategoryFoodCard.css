@@ -1,0 +1,70 @@
+@media (min-width: 401px) {
+  .food-item-card-menu-info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    background-color: #f5f5f5;
+    border-radius: 0rem 0rem 1rem 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .food-item-card {
+    display: flex;
+    flex-direction: column;
+    width: 12.5rem;
+    margin-right: 1rem;
+  }
+
+  .food-item-card-image {
+    border-radius: 1rem 1rem 0rem 0rem;
+  }
+
+  .food-item-card-menu {
+    font-weight: 700;
+  }
+
+  .number-of-restaurants {
+    color: #fc8a06;
+  }
+}
+
+@media (max-width: 400px) {
+  .food-item-card {
+    width: 5rem;
+  }
+
+  .order-popular-food-categories {
+    margin-bottom: 2rem;
+  }
+
+  .food-item-card-image {
+    width: 10rem;
+    height: 10rem;
+    margin-bottom: 0;
+    border-radius: 1rem 1rem 0rem 0rem;
+  }
+
+  .food-item-card-menu {
+    color: #fc8a06;
+    padding-top: 0.5rem;
+    font-weight: 700;
+    margin-top: 0;
+    /* margin-left: 1rem; */
+    margin-bottom: 0;
+  }
+
+  .number-of-restaurants {
+    color: white;
+    /* margin-left: 1rem; */
+    padding-top: 0.2rem;
+  }
+
+  .food-item-card-menu-info {
+    background-color: #03081f;
+    padding-bottom: 0.5rem;
+    border-radius: 0rem 0rem 1rem 1rem;
+    width: 10rem;
+    padding-left: 0.5rem;
+  }
+}

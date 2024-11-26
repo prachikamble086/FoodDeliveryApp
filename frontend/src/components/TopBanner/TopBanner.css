@@ -1,0 +1,12 @@
+.fast-and-fresh-card {
+  display: flex;
+  width: 100%;
+  height: 10rem;
+  margin-bottom: 10rem;
+}
+
+@media (max-width: 400px) {
+  .fast-and-fresh-card {
+    display: none;
+  }
+}

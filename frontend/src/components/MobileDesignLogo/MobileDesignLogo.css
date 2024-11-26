@@ -1,0 +1,18 @@
+.for-mobile-design {
+  display: none;
+}
+
+@media (max-width: 400px) {
+  .for-mobile-design {
+    display: block;
+    padding-left: 1rem;
+  }
+  .logo-cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

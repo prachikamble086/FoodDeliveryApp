@@ -1,0 +1,17 @@
+@media (min-width: 401px) {
+  .app-statistics {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    display: flex;
+    background-color: #fc8a06;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .app-statistics {
+    background-color: #fc8a06;
+    padding: 2rem;
+  }
+}

@@ -1,0 +1,163 @@
+@media (min-width: 401px) {
+  .profile-page {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .arrow-image-profile-page {
+    margin-left: 2rem;
+  }
+
+  .arrow-and-profile {
+    display: flex;
+    align-items: center;
+  }
+
+  .profile-pic-and-edit-button {
+    margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .profile-pic-and-name {
+    display: flex;
+    gap: 2rem;
+    font-size: 2rem;
+    align-items: center;
+  }
+
+  .profile-pic {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .edit-button {
+    width: 7rem;
+    height: 3rem;
+    background-color: #fc8a06;
+    color: white;
+    border: none;
+  }
+
+  .my-profile {
+    font-size: 2rem;
+  }
+
+  .profile-page-form {
+    display: flex;
+    margin: 2rem;
+    justify-content: space-between;
+  }
+
+  .arrow-and-profile-mobile {
+    display: none;
+  }
+
+  .name-and-gender {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .email-and-country {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 400px) {
+  .profile-page-footer {
+    display: none;
+  }
+
+  .profile-page {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .arrow-image-profile-page {
+    margin-left: 1rem;
+  }
+
+  .arrow-and-profile {
+    display: none;
+  }
+
+  .arrow-image-profile-page {
+    background-color: #fc8a06;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    border-radius: 10rem;
+  }
+
+  .arrow-and-profile-mobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    margin-top: 1rem;
+  }
+
+  .edit-button-mobile {
+    position: absolute;
+    right: 1rem;
+    width: 5rem;
+    height: 2rem;
+    background-color: #fc8a06;
+    color: white;
+    border: none;
+  }
+
+  .profile-pic-and-edit-button {
+    margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .your-profile {
+    margin-left: 1rem;
+  }
+
+  .profile-pic-and-name {
+    display: none;
+  }
+
+  .profile-pic {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .edit-button {
+    display: none;
+  }
+
+  .edit-button {
+    width: 7rem;
+    height: 3rem;
+    background-color: #fc8a06;
+    color: white;
+    border: none;
+  }
+
+  .my-profile {
+    font-size: 2rem;
+  }
+
+  .profile-page-form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    gap: 2rem;
+  }
+
+  .name-and-gender {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .email-and-country {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,88 @@
+@media (min-width: 401px) {
+  .card-image {
+    width: 27rem;
+    height: 18rem;
+    border-radius: 1rem;
+    display: flex;
+  }
+
+  .restaurant-menu-burgers {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .discount-badge {
+    position: absolute;
+    right: 1rem;
+    top: 0;
+    background-color: black;
+    color: white;
+    width: 3rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 0rem 0rem 1rem 1rem;
+    font-size: 1.2rem;
+    font-size: 700;
+  }
+
+  .discount-restaurant {
+    position: absolute;
+    bottom: 4rem;
+    left: 1rem;
+    font-size: 1.4rem;
+    color: #fc8a06;
+    margin-bottom: 0.5rem;
+  }
+
+  .discount-restaurant-name {
+    position: absolute;
+    color: white;
+    bottom: 3rem;
+    left: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .restaurant-menu-burgers {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .card-image {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 1rem;
+    display: block;
+  }
+
+  .discount-badge {
+    position: absolute;
+    right: 0.5rem;
+    background-color: black;
+    color: white;
+    width: 3rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    padding-top: 0.2rem;
+    border-radius: 0.5rem;
+  }
+
+  .discount-restaurant {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    color: #fc8a06;
+  }
+
+  .discount-restaurant-name {
+    color: #03081f;
+    font-size: 0.4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+}

@@ -1,0 +1,121 @@
+@media (min-width: 401px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+  }
+
+  .customer-reviews {
+    background-color: #d9d9d9;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+  }
+
+  .customer-reviews-buttons-mobile-view {
+    display: none;
+  }
+
+  .customer-reviews-header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .customer-reviews-header-and-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .customer-reviews-buttons {
+    margin-right: 5rem;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .review-images {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+
+  .review-image-list {
+    width: 25rem;
+  }
+
+  .customer-reviews-button-1,
+  .customer-reviews-button-2 {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 10rem;
+    font-size: 2rem;
+    background-color: #fc8a06;
+    border: none;
+  }
+
+  .customer-review-image {
+    width: 20rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .customer-reviews {
+    background-color: #d9d9d9;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .customer-reviews-header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-left: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .customer-reviews-buttons {
+    display: none;
+  }
+
+  .customer-reviews-buttons-mobile-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .customer-reviews-button-1-mobile-view,
+  .customer-reviews-button-2-mobile-view {
+    background-color: #fc8a06;
+    border-radius: 100%;
+    border: none;
+    height: 2rem;
+    width: 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+  }
+
+  .review-image-list {
+    margin: 0;
+    padding: 0;
+  }
+
+  .review-images {
+    display: flex;
+    overflow-x: auto;
+    /* gap: 1rem; */
+    width: 100%;
+    max-width: 100vw;
+    height: auto;
+    padding: 1rem;
+    padding-right: 0;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,23 @@
+@media (min-width: 401px) {
+  .join-app {
+    display: flex;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .join-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+  }
+}
+
+.join-app {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}

@@ -1,0 +1,12 @@
+.first-order-product-card {
+  margin: 2rem;
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 400px) {
+  .first-order-product-card {
+    display: none;
+  }
+}

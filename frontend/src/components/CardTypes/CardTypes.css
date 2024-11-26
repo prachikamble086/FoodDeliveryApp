@@ -1,0 +1,17 @@
+.card-name-initial-and-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px #ffe8ce solid;
+  border-radius: 10rem;
+}
+
+.card-name-and-initial {
+  display: flex;
+}
+
+.card-initial {
+  margin-right: 1rem;
+}

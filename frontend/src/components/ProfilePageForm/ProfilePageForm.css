@@ -1,0 +1,31 @@
+@media (min-width: 401px) {
+  .profile-page-form-label {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .profile-page-input {
+    width: 35rem;
+    padding: 1rem;
+    height: 2rem;
+    background-color: #f9f9f9;
+    border: none;
+  }
+}
+
+@media (max-width: 400px) {
+  profile-page-form-label {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .profile-page-input {
+    width: 10rem;
+    padding: 1rem;
+    height: 2rem;
+    background-color: #f9f9f9;
+    border: none;
+    gap: 2rem;
+  }
+}

@@ -1,0 +1,39 @@
+@media (min-width: 401px) {
+  .popular-category-food-card {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .order-restaurant {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+
+  .order-popular-food-categories {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .order-popular-food-categories {
+    background-color: #d9d9d980;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .popular-category-food-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .order-restaurant {
+    font-size: 1rem;
+    padding-top: 1rem;
+    font-weight: 700;
+  }
+}

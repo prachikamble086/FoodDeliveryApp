@@ -1,0 +1,107 @@
+@media (min-width: 401px) {
+  .exclusive-deals-and-offer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .offer-and-cuisine {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .restaurant-menu-burgers {
+    display: flex;
+  }
+
+  .offer-button {
+    display: none;
+  }
+
+  .cuisine {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cuisine-type {
+    height: 3rem;
+    border-radius: 10rem;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: white;
+    border: none;
+    align-items: center;
+  }
+
+  .cuisine-type-selected {
+    background-color: white;
+    border: 1px solid #fc8a06;
+    border-radius: 10rem;
+    padding: 1rem;
+    color: #fc8a06;
+    font-weight: 700;
+  }
+
+  .upto-offers {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  .mobile-design-button {
+    display: none;
+  }
+
+  .exclusive-deals-and-offer {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .mobile-design-button {
+    display: flex;
+    background-color: white;
+    align-items: center;
+    border-radius: 2rem 2rem;
+  }
+  .offer-button {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    justify-content: space-between;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
+
+  .dropdown-button {
+    rotate: 90deg;
+    margin-right: 0.5rem;
+  }
+
+  .discount-offer {
+    font-weight: 700;
+    font-size: 0.8rem;
+  }
+
+  .upto-offers {
+    display: none;
+  }
+
+  .cuisine {
+    display: none;
+  }
+
+  .exclusive-deals-and-offer {
+    margin-left: 0.5rem;
+    overflow-x: scroll;
+    overflow-y: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+}

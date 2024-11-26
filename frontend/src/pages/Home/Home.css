@@ -1,0 +1,19 @@
+.fast-and-fresh-card {
+  display: flex;
+  background-color: lightgreen;
+  height: 30rem;
+}
+
+.overlap-images {
+  display: flex;
+}
+
+.order {
+  display: flex-end;
+}
+
+.order1,
+.order2,
+.order3 {
+  background-color: white;
+}
