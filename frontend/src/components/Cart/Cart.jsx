@@ -1,5 +1,6 @@
 import { ShoppingBasket } from "../../constant";
 import { ForwardButton } from "../../constant";
+import "./Cart.css";
 
 const Cart = () => {
   return (

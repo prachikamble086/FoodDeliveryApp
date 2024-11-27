@@ -204,6 +204,12 @@ const SocialIconS =
 const OrderSucessfullBadge =
   "https://res.cloudinary.com/drkzizaiv/image/upload/v1732458641/OrderSucessfullBadge_vgqyd0.png";
 
+const Star =
+  "https://res.cloudinary.com/drkzizaiv/image/upload/v1732694016/Star_cun77f.png";
+
+const ClockProductPage =
+  "https://res.cloudinary.com/drkzizaiv/image/upload/v1732694016/Time_Span_k69ox4.png";
+
 export {
   LOGIN_HERO_IMAGE,
   LOGO_ORANGE,
@@ -278,4 +284,6 @@ export {
   SocialIconM,
   SocialIconS,
   OrderSucessfullBadge,
+  ClockProductPage,
+  Star,
 };

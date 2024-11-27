@@ -1,4 +1,3 @@
-import { homePageData } from "../../mock";
 import OfferAndCart from "../../components/OfferAndCart/OfferAndCart";
 import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import ExclusiveDeals from "../../components/ExclusiveDeals/ExclusiveDeals";

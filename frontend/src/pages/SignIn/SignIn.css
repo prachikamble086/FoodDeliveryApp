@@ -27,13 +27,9 @@
     align-items: center;
   }
 
-  .burger-image-register {
+  .burger-image-signin {
     width: 90%;
     height: 90%;
-  }
-
-  .regiter-button {
-    margin-bottom: 2rem;
   }
 }
 
@@ -46,7 +42,6 @@
     align-items: center;
     gap: 1rem;
     margin-right: 1rem;
-    margin-left: 1rem;
   }
 
   .signin {
@@ -62,7 +57,7 @@
     display: none;
   }
 
-  .burger-image-register {
+  .burger-image-signin {
     display: none;
   }
 }

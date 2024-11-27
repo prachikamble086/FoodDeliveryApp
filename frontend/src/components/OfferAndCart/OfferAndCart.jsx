@@ -1,9 +1,7 @@
 import { Location } from "../../constant";
 import Cart from "../Cart/Cart";
 import "./OfferAndCart.css";
-import PrimaryButton from "../PrimaryButton/PrimaryButton";
 import { User } from "../../constant";
-const noAction = () => {};
 
 const OfferAndCart = () => {
   return (
@@ -26,13 +24,13 @@ const OfferAndCart = () => {
           </div>
         </div>
         <div className="mobile-header">
-          <PrimaryButton
-            onclick={noAction}
-            buttonContent="Login/SignUp"
-            img={User}
-            className="mobile-design-login-up-beside-cart"
-          />
-          <div className="cart"></div>
+          <button className="mobile-design-login-up-beside-cart">
+            Login/SignUp
+            <img src={User} alt="" className="user-login-cart" />
+          </button>
+          <div className="cart">
+            <Cart />
+          </div>
         </div>
       </div>
       <div className="mobile-design-location">

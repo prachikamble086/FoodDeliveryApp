@@ -4,6 +4,7 @@ import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 import OrderLogo from "../../components/OrderLogo/OrderLogo";
 import { LOGIN_HERO_IMAGE } from "../../constant";
 import { Link } from "react-router-dom";
+import "./Register.css";
 
 const noAction = () => {};
 
@@ -13,7 +14,7 @@ const Register = () => {
       <div className="signin-and-image">
         <div className="order-and-signin">
           <div className="order-logo">
-            <OrderLogo width="100px" />
+            <OrderLogo width="150px" />
           </div>
           <form className="signin">
             <h2>Welcome Back 👋</h2>
@@ -38,14 +39,18 @@ const Register = () => {
             <Link to="../SignIn">
               <PrimaryButton onClick={noAction} buttonContent="Sign In" />
             </Link>
-            <p>Forgot Password?</p>
           </form>
-          <p>
-            Dont you have an account? <button>Sign up</button>
+          <p className="regiter-button">
+            Dont you have an account?{" "}
+            <button className="signup-button">Sign in</button>
           </p>
         </div>
         <div className="burger-image">
-          <img src={LOGIN_HERO_IMAGE} alt="" />
+          <img
+            src={LOGIN_HERO_IMAGE}
+            alt=""
+            className="burger-image-register"
+          />
         </div>
       </div>
       <Footer />

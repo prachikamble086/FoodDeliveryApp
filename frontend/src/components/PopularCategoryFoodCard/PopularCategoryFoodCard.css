@@ -40,7 +40,7 @@
 
   .food-item-card-image {
     width: 10rem;
-    height: 10rem;
+    height: 9rem;
     margin-bottom: 0;
     border-radius: 1rem 1rem 0rem 0rem;
   }
@@ -48,15 +48,13 @@
   .food-item-card-menu {
     color: #fc8a06;
     padding-top: 0.5rem;
-    font-weight: 700;
+    font-weight: 500;
     margin-top: 0;
-    /* margin-left: 1rem; */
     margin-bottom: 0;
   }
 
   .number-of-restaurants {
     color: white;
-    /* margin-left: 1rem; */
     padding-top: 0.2rem;
   }
 

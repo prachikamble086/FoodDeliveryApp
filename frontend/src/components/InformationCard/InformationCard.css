@@ -7,8 +7,9 @@
     background-color: #fbfbfb;
     padding-top: 2rem;
     margin-bottom: 3rem;
-    height: 25rem;
+    height: auto;
     font-size: 1rem;
+    flex-wrap: wrap;
   }
 
   .day {
@@ -20,14 +21,12 @@
     font-weight: 700;
   }
 
-  .delivery-info {
-    display: flex;
-    flex-direction: column;
-    padding: 3rem;
-  }
-
-  .contact-info {
-    padding: 3rem;
+  .delivery-info,
+  .contact-info,
+  .operational-info {
+    padding: 2rem;
+    width: 30%;
+    box-sizing: border-box;
   }
 
   .contact-info-para {
@@ -39,16 +38,11 @@
   .operational-info {
     background-color: #03081f;
     color: white;
-    padding: 3rem;
+    padding: 2rem;
     padding-bottom: 2rem;
   }
 
-  .operational-info-timing {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
+  .operational-info-timing,
   .delivery-info-timing {
     display: flex;
     flex-direction: column;
@@ -63,6 +57,7 @@
 
   .day-and-timing {
     display: flex;
+    align-items: center;
   }
 
   .delivery-info-title-and-image,

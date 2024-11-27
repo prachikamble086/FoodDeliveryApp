@@ -1,0 +1,39 @@
+@media (max-width: 400px) {
+  .cart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .cart-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    background-color: #028643;
+    width: 100%;
+    padding: 0.5rem 1rem;
+  }
+
+  .cart-image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .shopping-basket {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .ForwardButton {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@media (min-width: 401px) {
+}

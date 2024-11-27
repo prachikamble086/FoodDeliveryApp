@@ -1,13 +1,11 @@
+import "./OrderSuccessful.css";
 import { OrderSucessfullBadge } from "../../constant";
 import Footer from "../Footer/Footer";
 import MobileDesignLogo from "../MobileDesignLogo/MobileDesignLogo";
 import NavigationBar from "../NavigationBar/NavigationBar";
 import OfferAndCart from "../OfferAndCart/OfferAndCart";
-import PrimaryButton from "../PrimaryButton/PrimaryButton";
-import "./OrderSuccessful.css";
-const OrderSuccessful = () => {
-  const noAction = () => {};
 
+const OrderSuccessful = () => {
   return (
     <>
       <div>
@@ -29,15 +27,10 @@ const OrderSuccessful = () => {
               chosen delights!
             </div>
           </div>
-          <div className="ordered-menu-list">
+          <div className="ordered-menu-list-order-page">
             <div>Menu Item 1</div>
             <div>Menu Item 2</div>
             <div>Menu Item 3</div>
-            {/* <PrimaryButton
-              onclick={noAction}
-              buttonContent="Back to Home"
-              className="order-sucessful-button"
-            /> */}
             <button className="order-sucessful-button">Back to Home</button>
           </div>
         </div>

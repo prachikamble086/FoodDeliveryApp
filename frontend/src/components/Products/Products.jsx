@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { restaurant } from "../../mock";
+import { homePageData } from "../../mock";
 import "./Products.css";
 
 const Products = () => {
@@ -16,7 +16,7 @@ const Products = () => {
           Popular Restaurants
         </p>
         <div className="food-brands-homePage">
-          {restaurant.map((restaurant) => (
+          {homePageData.restaurants.map((restaurant) => (
             <button
               className=" "
               key={restaurant.id}

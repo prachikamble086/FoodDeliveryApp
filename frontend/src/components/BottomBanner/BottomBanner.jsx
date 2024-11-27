@@ -7,6 +7,10 @@ const BottomBanner = () => {
     <>
       <div className="personalized-and-instant-card">
         <div className="personalized-and-instant-card-details">
+          <div className="logo-and-text-mobile">
+            <OrderLogo width="150rem" height="50rem" />
+            <p className="text-after-logo-mobile">ing is more</p>
+          </div>
           <div>
             <img
               src={PeronalizedOrderCard}
@@ -23,6 +27,9 @@ const BottomBanner = () => {
               <p className="personalised">Personalised </p>
               <p>& Instant</p>
             </div>
+            <p className="faster-ordering-mobile">
+              Download the Order.uk app for faster ordering
+            </p>
             <p className="faster-ordering">
               Download the Order.uk app for faster ordering
             </p>

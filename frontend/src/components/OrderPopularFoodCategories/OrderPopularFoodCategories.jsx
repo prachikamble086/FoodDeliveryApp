@@ -6,43 +6,62 @@ import { Breakfast } from "../../constant";
 import { Soups } from "../../constant";
 import { Pizza } from "../../constant";
 import "./OrderPopularFoodCategories.css";
+import { homePageData } from "../../mock";
 const OrderPopularFoodCategories = () => {
   return (
     <>
       <div className="order-popular-food-categories">
         <div className="order-restaurant">
-          <p>Order.uk Popular Categories 🤩</p>
+          <p>{homePageData.popularFoodCategoriesData.title}</p>
         </div>
         <div className="popular-category-food-card">
           <PopularCategoryFoodCard
             foodImage={BurgerFastFood}
-            menu="Burgers & Fast food"
-            numberOfRestaurants="21"
+            menu={homePageData.popularFoodCategoriesData.categories[0].menu}
+            numberOfRestaurants={
+              homePageData.popularFoodCategoriesData.categories[0]
+                .numberOfRestaurants
+            }
           />
           <PopularCategoryFoodCard
             foodImage={Salads}
-            menu="Salads"
-            numberOfRestaurants="32"
+            menu={homePageData.popularFoodCategoriesData.categories[1].menu}
+            numberOfRestaurants={
+              homePageData.popularFoodCategoriesData.categories[1]
+                .numberOfRestaurants
+            }
           />
           <PopularCategoryFoodCard
             foodImage={Pasta}
-            menu="Pasta"
-            numberOfRestaurants="4"
+            menu={homePageData.popularFoodCategoriesData.categories[2].menu}
+            numberOfRestaurants={
+              homePageData.popularFoodCategoriesData.categories[2]
+                .numberOfRestaurants
+            }
           />
           <PopularCategoryFoodCard
             foodImage={Pizza}
-            menu="Pizza"
-            numberOfRestaurants="32"
+            menu={homePageData.popularFoodCategoriesData.categories[3].menu}
+            numberOfRestaurants={
+              homePageData.popularFoodCategoriesData.categories[3]
+                .numberOfRestaurants
+            }
           />
           <PopularCategoryFoodCard
             foodImage={Breakfast}
-            menu="Breakfast"
-            numberOfRestaurants="4"
+            menu={homePageData.popularFoodCategoriesData.categories[4].menu}
+            numberOfRestaurants={
+              homePageData.popularFoodCategoriesData.categories[4]
+                .numberOfRestaurants
+            }
           />
           <PopularCategoryFoodCard
             foodImage={Soups}
-            menu="Soups"
-            numberOfRestaurants="32"
+            menu={homePageData.popularFoodCategoriesData.categories[5].menu}
+            numberOfRestaurants={
+              homePageData.popularFoodCategoriesData.categories[5]
+                .numberOfRestaurants
+            }
           />
         </div>
       </div>
