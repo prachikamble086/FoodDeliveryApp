@@ -7,6 +7,8 @@ import Register from "./pages/Register/Register";
 import PaymentPage from "./pages/PaymentPage/PaymentPage";
 import OrderSuccessful from "./components/OrderSuccessful/OrderSuccessful";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import CheckoutPage from "./components/CheckoutPage/CheckoutPage";
+import DeliveryAddress from "./components/DeliveryAddress/DeliveryAddress";
 
 function App() {
   return (
@@ -19,7 +21,13 @@ function App() {
           <Route path="/product" element={<ProductPage />} />
           <Route path="/payment" element={<PaymentPage />} />
           <Route path="/order" element={<OrderSuccessful />} />
+          <Route
+            path="/checkoutpage/deliveryaddress"
+            element={<DeliveryAddress />}
+          />
+
           <Route path="/profilepage" element={<ProfilePage />} />
+          <Route path="/checkoutpage" element={<CheckoutPage />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -134,12 +134,10 @@ const homePageData = {
 };
 
 const productPage = {
-  customerReviews: [Review1, Review2, Review3],
   tagline: "I'm lovin' it!",
   name: "McDonald’s East London",
   rating: "3.4",
   reviews: 123,
-  categories: ["Burger", "Fries"], //map over this on products page
   deals: [
     {
       cardImage: ButterBrot,

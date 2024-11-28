@@ -1,0 +1,219 @@
+@media (min-width: 401px) {
+  .choose-arrow {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .delivery-address-and-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid black;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 10rem;
+  }
+
+  .delivery-cotainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .delivery-image-cotainer {
+    background-color: #ffe8ce;
+    padding: 0.5rem;
+    border-radius: 50%;
+  }
+
+  .delivery-icon-image {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .choose-arrow {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .arrow-image-mobile {
+    display: none;
+  }
+  .arrow-image {
+    border-radius: 2rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+  }
+
+  .item-and-cost {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .item-annd-cost,
+  .sales-number,
+  .subtotal-cost {
+    display: flex;
+    justify-content: space-between;
+  }
+  .choose-payment-method-button {
+    width: 100%;
+    height: 3rem;
+    border-radius: 10rem;
+    color: white;
+    background-color: #fc8a06;
+    border: none;
+    margin-top: 1rem;
+  }
+
+  .deliver-address-checkout-page {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  .delivery-adress {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .checkout-item {
+    width: 50%;
+    border: 1px solid black;
+    height: fit-content;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .choose-arrow {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .popular-and-similar-restaurants {
+    display: none;
+  }
+
+  .arrow-image {
+    display: none;
+  }
+
+  .arrow-image-mobile {
+    background-color: #fc8a06;
+    border-radius: 2rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+  }
+
+  .your-order-details {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .delivery-address-and-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid black;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 10rem;
+  }
+
+  .delivery-cotainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .delivery-image-cotainer {
+    background-color: #ffe8ce;
+    padding: 0.5rem;
+    border-radius: 50%;
+  }
+
+  .delivery-icon-image {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .delivery-icon-image {
+    width: 1rem;
+    height: 1rem;
+  }
+  .item-and-cost {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .item-annd-cost,
+  .sales-number,
+  .subtotal-cost {
+    display: flex;
+    justify-content: space-between;
+  }
+  .choose-payment-method-button {
+    width: 100%;
+    height: 3rem;
+    border-radius: 10rem;
+    color: white;
+    background-color: #fc8a06;
+    border: none;
+    margin-top: 1rem;
+  }
+
+  .deliver-address-checkout-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  .delivery-adress {
+    display: flex;
+    flex-direction: column;
+    /* width: 50%; */
+  }
+
+  .checkout-item {
+    /* width: 50%; */
+    border: 1px solid black;
+    height: fit-content;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}

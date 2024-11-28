@@ -210,6 +210,15 @@ const Star =
 const ClockProductPage =
   "https://res.cloudinary.com/drkzizaiv/image/upload/v1732694016/Time_Span_k69ox4.png";
 
+const LocationCkeckoutPage =
+  "https://res.cloudinary.com/drkzizaiv/image/upload/v1732749379/LocationCkeckoutPage_pkyr7b.png";
+
+const OrderPagePlus =
+  "https://res.cloudinary.com/drkzizaiv/image/upload/v1732754023/PlusOrderPage_x41snq.png";
+
+const location =
+  "https://res.cloudinary.com/drkzizaiv/image/upload/v1732762539/location_xaa84g.png";
+
 export {
   LOGIN_HERO_IMAGE,
   LOGO_ORANGE,
@@ -286,4 +295,7 @@ export {
   OrderSucessfullBadge,
   ClockProductPage,
   Star,
+  LocationCkeckoutPage,
+  OrderPagePlus,
+  location,
 };
