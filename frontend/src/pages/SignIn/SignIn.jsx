@@ -5,11 +5,37 @@ import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 import OrderLogo from "../../components/OrderLogo/OrderLogo";
 import { LOGIN_HERO_IMAGE } from "../../constant";
 import "./SignIn.css";
+import axios from "axios";
+import { useState } from "react";
+
 function SignIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const handleSignInButton = (e) => {
+
+  const handleSignInButton = async (e) => {
     e.preventDefault();
-    navigate("/HomePage");
+
+    const userInfo = {
+      email,
+      password,
+    };
+
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/user/login",
+        userInfo
+      );
+      console.log(response.data);
+      if (response.data) {
+        alert("Login Successful");
+        navigate("/home");
+      }
+      localStorage.setItem("Users", JSON.stringify(response.data));
+    } catch (error) {
+      console.error("Login error:", error);
+      alert("Error: " + error.response?.data?.message || error.message);
+    }
   };
 
   return (
@@ -19,7 +45,7 @@ function SignIn() {
           <div className="order-logo">
             <OrderLogo width="150px" />
           </div>
-          <form className="signin">
+          <form className="signin" onSubmit={handleSignInButton}>
             <h2 className="welcom-back">Welcome Back 👋</h2>
             <p>
               {`Today is a new day. It's your day. You shape it. Sign in to
@@ -28,18 +54,19 @@ function SignIn() {
             <InputAndLabel
               inputLabel="Email"
               placeholder={"Example@email.com"}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <InputAndLabel
               inputLabel="Password"
               placeholder={"At least 8 characters"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
-            <PrimaryButton
-              onClick={handleSignInButton}
-              buttonContent="Sign In"
-            />
+            <PrimaryButton type="submit" buttonContent="Sign In" />
           </form>
           <p>
-            Dont you have an account?{" "}
+            Don't you have an account?{" "}
             <button className="signup-button">Sign up</button>
           </p>
         </div>

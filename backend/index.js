@@ -1,71 +1,36 @@
 const express = require("express");
 const app = express();
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const cors = require("cors");
 
-//navigation take from frontend
+const userRoute = require("./routes/user.route");
 
-/* tables to be made 
+dotenv.config();
 
-1.user's table - 
--> name
--> email  
--> passwword (hashed value)
--> phone number
--> gender
+app.use(cors()); // Allow all or specific origins
+app.use(express.json());
 
+const PORT = process.env.PORT || 3000;
+const URI = process.env.MongoDBURI;
 
-2. address table -
--> user id (links the address to  user table)
--> State
--> City
--> PinCode
--> PhoneNumber
--> FullAddress
+// MongoDB Connection
+try {
+  mongoose.connect(URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+  console.log("Connected to MongoDB");
+} catch (error) {
+  console.log("MongoDB connection error:", error);
+}
 
-3. payment method table
--> user id    //ref to which table ?
--> last 4 digits
--> expiration
--> cvc
--> name on card
+app.get("/test", (req, res) => {
+  res.send("Server is working!");
+});
 
+app.use("/user", userRoute); // Routes for user
 
-4. restaurants table -
--> logo
--> name
--> tagline
--> rating
--> review count
--> cover product image
--> categories {array} 
-
-
-5. food table -
--> restaurant id
--> name
--> description
--> price
--> image 
--> category // will this ref ? to which table ?
-
-
-6. review table - 
--> restaurant id  // Ref ? to table food table
--> user id  //ref to which table ?
--> rating
--> content
--> location
-
-
-7. cart table - 
--> user id   //ref to which table ?
--> subtotal
--> discount
--> delivery fee
--> total
--> item (array of food item ids as items are added and deleted) // what to add ?
--> deleted at (time stamp)   // what to add ?     // active cart : null value deleted at , deletd cart : timestamp when user checkts out                           
-
-
-
-
-*/
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
+});

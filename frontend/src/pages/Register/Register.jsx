@@ -1,14 +1,53 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import InputAndLabel from "../../components/InputAndLabel/InputAndLabel";
 import Footer from "../../components/Footer/Footer";
 import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 import OrderLogo from "../../components/OrderLogo/OrderLogo";
 import { LOGIN_HERO_IMAGE } from "../../constant";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Register.css";
 
-const noAction = () => {};
-
 const Register = () => {
+  const [name, setName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!name || !phoneNumber || !email || !password) {
+      alert("All fields are required.");
+      return;
+    }
+
+    const userInfo = {
+      name,
+      phoneNumber,
+      email,
+      password,
+    };
+
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/user/signup",
+        userInfo
+      );
+      console.log(response.data);
+      if (response.data) {
+        alert("Signup Successful");
+        navigate("/login");
+      }
+      localStorage.setItem("Users", JSON.stringify(response.data));
+    } catch (error) {
+      console.error("Signup error:", error);
+      alert("Error: " + error.response.data.message);
+    }
+  };
+
   return (
     <>
       <div className="signin-and-image">
@@ -16,39 +55,46 @@ const Register = () => {
           <div className="order-logo">
             <OrderLogo width="150px" />
           </div>
-          <form className="signin">
-            <h2>Welcome Back 👋</h2>
-            <p>
-              {`Today is a new day. It's your day. You shape it. Sign in to
-                start ordering.`}
-            </p>
-            <InputAndLabel inputLabel="Name" placeholder={"eg. John A"} />
+          <form className="signin" onSubmit={handleSubmit}>
+            <h2>Welcome to the Food Delivery App! 🍔</h2>
+            <p>{`Create your account to start ordering your favorite food.`}</p>
+            <InputAndLabel
+              inputLabel="Name"
+              placeholder="eg. John A"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
             <InputAndLabel
               inputLabel="Phone Number"
-              placeholder={"Enter your 10 digit number"}
+              placeholder="Enter your 10 digit number"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
             />
             <InputAndLabel
               inputLabel="Email"
-              placeholder={"Example@email.com"}
+              placeholder="Example@email.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <InputAndLabel
               inputLabel="Password"
-              placeholder={"At least 8 characters"}
+              placeholder="At least 8 characters"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
-
-            <Link to="../SignIn">
-              <PrimaryButton onClick={noAction} buttonContent="Sign In" />
-            </Link>
+            <PrimaryButton type="submit" buttonContent="Sign Up" />
           </form>
-          <p className="regiter-button">
-            Dont you have an account?{" "}
-            <button className="signup-button">Sign in</button>
+          <p className="register-button">
+            Already have an account?{" "}
+            <Link to="/login">
+              <button className="signup-button">Sign in</button>
+            </Link>
           </p>
         </div>
         <div className="burger-image">
           <img
             src={LOGIN_HERO_IMAGE}
-            alt=""
+            alt="Burger"
             className="burger-image-register"
           />
         </div>
