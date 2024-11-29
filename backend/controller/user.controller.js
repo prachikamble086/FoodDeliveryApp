@@ -14,7 +14,7 @@ const signup = async (req, res) => {
       return res.status(400).json({ message: "User already exists" });
     }
 
-    const hashPassword = await bcryptjs.hash(password, 10);
+    const hashPassword = bcryptjs.hash(password, process.env.SALT);
 
     const createdUser = new User({
       name,
@@ -47,12 +47,12 @@ const login = async (req, res) => {
     const user = await User.findOne({ email });
 
     if (!user) {
-      return res.status(400).json({ message: "Invalid email or password" });
+      return res.status(400).json({ message: "User not found " });
     }
 
     const isMatch = await bcryptjs.compare(password, user.password);
     if (!isMatch) {
-      return res.status(400).json({ message: "Invalid email or password" });
+      return res.status(400).json({ message: "Invalid password" });
     }
 
     res.status(200).json({

@@ -16,9 +16,9 @@ const paymentModeSchema = new Schema(
       type: String,
       required: [true, "Expiration field is required"],
     },
-    cvc: {
+    cvv: {
       type: String,
-      required: [true, "CVC field is required"],
+      required: [true, "CVV field is required"],
     },
     nameOnCard: {
       type: String,
@@ -33,10 +33,3 @@ const paymentModeSchema = new Schema(
 const PaymentMode = mongoose.model("PaymentMode", paymentModeSchema);
 
 module.exports = { PaymentMode };
-
-// 3. payment method table
-// -> user id
-// -> last 4 digits
-// -> expiration
-// -> cvc
-// -> name on card

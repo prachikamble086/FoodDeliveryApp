@@ -4,7 +4,8 @@ const { Schema } = mongoose;
 const reviewSchema = new Schema(
   {
     restaurantId: {
-      type: String,
+      type: Schema.Types.ObjectId,
+      ref: "Restaurant",
       required: [true, "Restaurant Id field is required"],
     },
     userId: {
@@ -14,6 +15,7 @@ const reviewSchema = new Schema(
     },
     rating: {
       type: String,
+      required: [true, "Rating field is required"],
     },
     content: {
       type: String,
@@ -27,13 +29,6 @@ const reviewSchema = new Schema(
   }
 );
 
-const ReviewTable = mongoose.model("ReviewTable", reviewSchema);
+const Review = mongoose.model("Review", reviewSchema);
 
-module.exports = { ReviewTable };
-
-// 6. review table -
-// -> restaurant id
-// -> user id
-// -> rating
-// -> content
-// -> location
+module.exports = { Review };

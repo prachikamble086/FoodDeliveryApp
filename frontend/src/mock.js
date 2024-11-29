@@ -43,9 +43,6 @@ const homePageData = {
     "Restaurants",
     "Track orders",
   ],
-  banner: {
-    top: "",
-  },
 
   exclusiveDealsData: {
     title: "Up to -40% 🎊 Order.uk exclusive deals",
@@ -104,31 +101,32 @@ const homePageData = {
       },
     ],
   },
+
   restaurants: [
     {
-      id: 1,
+      _id: 1,
       name: "McDonald’s London",
-      brandImg: Mcd,
+      logo: Mcd,
     },
     {
-      id: 2,
+      _id: 2,
       name: "Papa John's",
-      brandImg: PapaJohns,
+      logo: PapaJohns,
     },
     {
-      id: 2,
+      _id: 2,
       name: "Papa John's",
-      brandImg: PapaJohns,
+      logo: PapaJohns,
     },
     {
-      id: 2,
+      _id: 2,
       name: "Papa John's",
-      brandImg: PapaJohns,
+      logo: PapaJohns,
     },
     {
-      id: 2,
+      _id: 2,
       name: "Papa John's",
-      brandImg: PapaJohns,
+      logo: PapaJohns,
     },
   ],
 };
@@ -246,34 +244,34 @@ const productPage = {
   ],
   similarRestaurants: [
     {
-      id: 1,
+      _id: 1,
       name: "McDonald’s London",
-      brandImg: Mcd,
+      logo: Mcd,
     },
     {
-      id: 2,
+      _id: 2,
       name: "Papa John's",
-      brandImg: PapaJohns,
+      logo: PapaJohns,
     },
     {
-      id: 3,
+      _id: 3,
       name: "Papa John's",
-      brandImg: PapaJohns,
+      logo: PapaJohns,
     },
     {
-      id: 4,
+      _id: 4,
       name: "Papa John's",
-      brandImg: PapaJohns,
+      logo: PapaJohns,
     },
     {
-      id: 4,
+      _id: 4,
       name: "Papa John's",
-      brandImg: PapaJohns,
+      logo: PapaJohns,
     },
     {
-      id: 4,
+      _id: 4,
       name: "Papa John's",
-      brandImg: PapaJohns,
+      logo: PapaJohns,
     },
   ],
 
@@ -412,9 +410,9 @@ const customerReviews = {
 
 // const restaurant = [
 //   {
-//     id: 1,
+//     _id: 1,
 //     name: "McDonald’s London",
-//     brandImg: Mcd,
+//     logo: Mcd,
 //     menu: [
 //       {
 //         category: "Burgers",
@@ -506,9 +504,9 @@ const customerReviews = {
 //     ],
 //   },
 //   {
-//     id: 2,
+//     _id: 2,
 //     name: "Papa John's",
-//     brandImg: PapaJohns,
+//     logo: PapaJohns,
 //     menu: [
 //       {
 //         category: "Burgers",
@@ -601,9 +599,9 @@ const customerReviews = {
 //   },
 
 //   {
-//     id: 3,
+//     _id: 3,
 //     name: "KFC West London",
-//     brandImg: Kfc,
+//     logo: Kfc,
 //     menu: [
 //       {
 //         category: "Burgers",
@@ -696,9 +694,9 @@ const customerReviews = {
 //   },
 
 //   {
-//     id: 4,
+//     _id: 4,
 //     name: "Texas Chicken",
-//     brandImg: TexasChicken,
+//     logo: TexasChicken,
 //     menu: [
 //       {
 //         category: "Burgers",
@@ -790,9 +788,9 @@ const customerReviews = {
 //     ],
 //   },
 //   {
-//     id: 5,
+//     _id: 5,
 //     name: "Burger King",
-//     brandImg: BurgerKing,
+//     logo: BurgerKing,
 //     menu: [
 //       {
 //         category: "Burgers",
@@ -884,9 +882,9 @@ const customerReviews = {
 //     ],
 //   },
 //   {
-//     id: 6,
+//     _id: 6,
 //     name: "Shaurma 1",
-//     brandImg: Shaurma,
+//     logo: Shaurma,
 //     menu: [
 //       {
 //         category: "Burgers",

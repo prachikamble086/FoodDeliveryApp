@@ -37,11 +37,3 @@ const addressSchema = new Schema(
 const Address = mongoose.model("Address", addressSchema);
 
 module.exports = { Address };
-
-// 2. address table -
-// -> user id (links the address to  user table)
-// -> State
-// -> City
-// -> PinCode
-// -> PhoneNumber
-// -> FullAddress

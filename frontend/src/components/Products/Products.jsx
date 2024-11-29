@@ -19,11 +19,11 @@ const Products = () => {
           {homePageData.restaurants.map((restaurant) => (
             <button
               className=" "
-              key={restaurant.id}
+              key={restaurant._id}
               onClick={() => handleRestaurantClick(restaurant)}
             >
               <img
-                src={restaurant.brandImg}
+                src={restaurant.logo}
                 alt=""
                 className="food-brands-image-homePage"
               />

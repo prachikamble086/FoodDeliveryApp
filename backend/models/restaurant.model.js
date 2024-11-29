@@ -1,4 +1,4 @@
-import mongoose, { model } from "mongoose";
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const restaurantSchema = new Schema(
@@ -40,12 +40,3 @@ const restaurantSchema = new Schema(
 const Restaurant = mongoose.model("Restaurant", restaurantSchema);
 
 module.exports = { Restaurant };
-
-// 4. restaurants table -
-// -> logo
-// -> name
-// -> tagline
-// -> rating
-// -> review count
-// -> cover product image
-// -> categories {array}

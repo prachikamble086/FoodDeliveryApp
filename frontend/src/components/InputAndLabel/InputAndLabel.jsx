@@ -8,8 +8,8 @@ const InputAndLabel = ({ inputLabel, placeholder, value, onChange }) => {
         type="text"
         placeholder={placeholder}
         className="input-form"
-        value={value} // Use the value prop for the input field
-        onChange={onChange} // Use the onChange prop for handling input changes
+        value={value}
+        onChange={onChange}
       />
     </div>
   );

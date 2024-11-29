@@ -58,7 +58,7 @@ const DeliveryAddress = () => {
       name={name}
       placeholder={placeholder}
       className="address-box"
-      value={currentAddress[name] || ""}
+      value={currentAddress[name]}
       onChange={handleChange}
     />
   );
@@ -95,15 +95,46 @@ const DeliveryAddress = () => {
             </div>
 
             <div className="input-box-dialogue-box">
-              {[
-                { name: "state", placeholder: "State" },
-                { name: "city", placeholder: "City/District" },
-                { name: "pinCode", placeholder: "Pin Code" },
-                { name: "phone", placeholder: "Phone Number" },
-                { name: "fullAddress", placeholder: "Enter full address" },
-              ].map((field, index) => (
-                <AddressInput key={index} {...field} />
-              ))}
+              <input
+                type="text"
+                name="state"
+                placeholder="State"
+                className="address-box"
+                value={currentAddress.state}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                name="city"
+                placeholder="City/District"
+                className="address-box"
+                value={currentAddress.city}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                name="pinCode"
+                placeholder="Pin Code"
+                className="address-box"
+                value={currentAddress.pinCode}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                name="phone"
+                placeholder="Phone Number"
+                className="address-box"
+                value={currentAddress.phone}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                name="fullAddress"
+                placeholder="Enter full address"
+                className="address-box"
+                value={currentAddress.fullAddress}
+                onChange={handleChange}
+              />
             </div>
 
             <button className="save-button" onClick={handleSaveAddress}>

@@ -17,10 +17,10 @@ const RestaurantButtons = () => {
           {restaurant.map((restaurant) => (
             <button
               className="food-brands-buttons"
-              key={restaurant.id}
+              key={restaurant._id}
               onClick={() => handleRestaurantClick(restaurant)}
             >
-              <img src={restaurant.brandImg} alt="" />
+              <img src={restaurant.logo} alt="" />
               <div className="popular-restaurant-name">{restaurant.name}</div>
             </button>
           ))}

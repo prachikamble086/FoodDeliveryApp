@@ -171,11 +171,11 @@ const CheckoutPage = () => {
             {productPage.similarRestaurants.map((restaurant) => (
               <button
                 className="food-brands-buttons"
-                key={restaurant.id}
+                key={restaurant._id}
                 onClick={() => handleRestaurantClick(restaurant)}
               >
                 <img
-                  src={restaurant.brandImg}
+                  src={restaurant.logo}
                   alt={restaurant.name}
                   className="food-brands-button-image"
                 />

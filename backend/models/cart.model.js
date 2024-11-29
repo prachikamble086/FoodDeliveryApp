@@ -28,24 +28,23 @@ const cartSchema = new Schema(
       required: [true, "Total Fee field is required"],
     },
 
-    item: {
-      type: Array,
+    items: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Food",
+      },
+    ],
+
+    quantity: {
+      type: [Number],
     },
   },
+
   {
     timestamps: true,
   }
 );
 
-const CartTable = mongoose.model("CartTable", cartSchema);
+const Cart = mongoose.model("Cart", cartSchema);
 
-module.exports = { CartTable };
-
-// 7. cart table -
-// -> user id   //ref to which table ?
-// -> subtotal
-// -> discount
-// -> delivery fee
-// -> total
-// -> item (array of food item ids as items are added and deleted)
-// -> deleted at (time stamp)       // active cart : null value deleted at , deletd cart : timestamp when user checkts out
+module.exports = { Cart };

@@ -4,8 +4,8 @@ const { Schema } = mongoose;
 const foodSchema = new Schema(
   {
     restaurantId: {
-      type: String,
-      required: [true, "Restaurant Id field is required"],
+      type: Schema.Types.ObjectId,
+      ref: "Restaurant",
     },
     name: {
       type: String,
@@ -16,7 +16,7 @@ const foodSchema = new Schema(
       required: [true, "Description field is required"],
     },
     price: {
-      type: String,
+      type: Number,
       required: [true, "Price field is required"],
     },
     image: {
@@ -33,14 +33,6 @@ const foodSchema = new Schema(
   }
 );
 
-const FoodTable = mongoose.model("FoodTable", foodSchema);
+const Food = mongoose.model("Food", foodSchema);
 
-module.exports = { FoodTable };
-
-// 5. food table -
-// -> restaurant id
-// -> name
-// -> description
-// -> price
-// -> image
-// -> category
+module.exports = { Food };
