@@ -1,10 +1,16 @@
 const express = require("express");
-const { signup, login } = require("../controller/user.controller");
+
+const { getUserProfileById } = require("../controller/user.controller");
 
 const router = express.Router();
 
-router.post("/signup", signup);
+router.get("/profile/:userId", getUserProfileById);
+router.put("/profile/:userId");
 
-router.post("/login", login);
+// router.get("/address/:userId");
+// router.post("/address/:userId");
+
+// router.get("/payment-mode/:userId");
+// router.post("/payment-mode/:userId");
 
 module.exports = router;

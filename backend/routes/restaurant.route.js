@@ -1,11 +1,12 @@
 const express = require("express");
-const { getRestaurantById } = require("../controller/restaurant.controller");
+const {
+  getRestaurantById,
+  getMenuByRestaurantId,
+} = require("../controller/restaurant.controller");
 
 const router = express.Router();
 
-router.get("/:id", (req, res) => {
-  console.log("GET request received for restaurant ID:", req.params.id);
-  getRestaurantById(req, res);
-});
+router.get("/:restaurantId", getRestaurantById);
+router.get("/:restaurantId/menu", getMenuByRestaurantId);
 
 module.exports = router;

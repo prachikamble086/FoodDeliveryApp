@@ -5,7 +5,7 @@ const cors = require("cors");
 const userRoute = require("./routes/user.route");
 const homeRoute = require("./routes/home.route");
 const restaurantRoute = require("./routes/restaurant.route");
-const foodRoute = require("./routes/food.routes");
+const authRoute = require("./routes/auth.route");
 
 const { connectDb } = require("./models/db");
 
@@ -23,10 +23,10 @@ app.get("/test", (req, res) => {
   res.send("Server is working!");
 });
 
+app.use("/auth", authRoute);
 app.use("/user", userRoute);
 app.use("/home", homeRoute);
 app.use("/restaurant", restaurantRoute);
-app.use("/restaurant", foodRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
