@@ -1,22 +1,21 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
 
 const userRoute = require("./routes/user.route");
 const homeRoute = require("./routes/home.route");
-const { connectDb } = require("./models/db.js");
+const restaurantRoute = require("./routes/restaurant.route");
+const foodRoute = require("./routes/food.routes");
 
-const app = express();
+const { connectDb } = require("./models/db");
 
 dotenv.config();
 
-// to do : Add environment based CORS
+const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
-
-const PORT = process.env.PORT || 3000;
 
 connectDb();
 
@@ -26,7 +25,9 @@ app.get("/test", (req, res) => {
 
 app.use("/user", userRoute);
 app.use("/home", homeRoute);
+app.use("/restaurant", restaurantRoute);
+app.use("/restaurant", foodRoute);
 
 app.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });

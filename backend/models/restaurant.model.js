@@ -13,7 +13,7 @@ const restaurantSchema = new Schema(
     },
     tagline: {
       type: String,
-      required: [true, "Tagline field field is required"],
+      required: [true, "Tagline field is required"],
     },
     rating: {
       type: String,
@@ -39,4 +39,4 @@ const restaurantSchema = new Schema(
 
 const Restaurant = mongoose.model("Restaurant", restaurantSchema);
 
-module.exports = { Restaurant };
+module.exports = Restaurant;

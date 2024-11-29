@@ -32,4 +32,4 @@ const paymentModeSchema = new Schema(
 
 const PaymentMode = mongoose.model("PaymentMode", paymentModeSchema);
 
-module.exports = { PaymentMode };
+module.exports = PaymentMode;

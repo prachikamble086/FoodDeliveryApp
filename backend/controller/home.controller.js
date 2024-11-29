@@ -4,11 +4,7 @@ const home = async (req, res) => {
   try {
     const restaurants = await Restaurant.find({}).limit(10);
 
-    res.status(201).json({
-      user: {
-        name: "Prachi",
-        location: "Mumbai",
-      },
+    res.status(200).json({
       navigation: [
         "Home",
         "Browse Menu",
@@ -72,8 +68,11 @@ const home = async (req, res) => {
       restaurants,
     });
   } catch (error) {
-    console.error("Error in fetching data:", error);
-    res.status(500).json({ message: "An error occurred" });
+    console.error("Error fetching restaurant data:", error);
+    res.status(500).json({
+      message: "An error occurred while fetching the data",
+      error: error.message,
+    });
   }
 };
 

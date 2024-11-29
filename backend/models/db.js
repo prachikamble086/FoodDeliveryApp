@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+
 dotenv.config();
+
 const URI = process.env.MongoDBURI;
 
 async function connectDb() {
@@ -11,7 +13,7 @@ async function connectDb() {
     });
     console.log("Connected to MongoDB");
   } catch (error) {
-    console.log("MongoDB connection error:", error);
+    console.error("MongoDB connection error:", error);
   }
 }
 
