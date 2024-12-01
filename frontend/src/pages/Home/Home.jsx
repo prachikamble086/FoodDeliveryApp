@@ -10,6 +10,9 @@ import Footer from "../../components/Footer/Footer";
 import MobileDesignLogo from "../../components/MobileDesignLogo/MobileDesignLogo";
 import JoinApp from "../../components/JoinApp/JoinApp";
 import NumberInfo from "../../components/NumberInfo/NumberInfo";
+import CustomerReviews from "../../components/CustomerReviews/CustomerReviews";
+import Map from "../../components/Map/Map";
+
 
 const HomePage = () => {
   return (
@@ -26,6 +29,8 @@ const HomePage = () => {
         <BottomBanner />
         <JoinApp />
         <KnowMoreCard />
+        <CustomerReviews/>
+        <Map/>
         <NumberInfo />
         <Footer />
       </div>

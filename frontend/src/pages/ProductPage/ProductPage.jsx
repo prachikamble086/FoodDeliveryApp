@@ -7,7 +7,6 @@ import OfferAndCart from "../../components/OfferAndCart/OfferAndCart";
 import ProductPageBanner from "../../components/ProductPageBanner/ProductPageBanner";
 import OfferAndSearch from "../../components/OfferAndSearch/OfferAndSearch";
 import ProductPageMenuBar from "../../components/ProductPageMenuBar/ProductPageMenuBar";
-import { homePageData } from "../../mock";
 import FirstOrderProductPage from "../../components/FirstOrderProductPage/FirstOrderProductPage";
 import { Plus } from "../../constant";
 import "./ProductPage.css";

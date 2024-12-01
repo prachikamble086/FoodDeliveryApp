@@ -9,22 +9,22 @@ const cartSchema = new Schema(
       required: [true, "UserId field is required"],
     },
     subtotal: {
-      type: String,
+      type: Number,
       required: [true, "Subtototal field is required"],
     },
 
     discount: {
-      type: String,
+      type: Number,
       required: [true, "Discount field is required"],
     },
 
     deliveryFee: {
-      type: String,
+      type: Number,
       required: [true, "Delivery Fee field is required"],
     },
 
     total: {
-      type: String,
+      type: Number,
       required: [true, "Total Fee field is required"],
     },
 

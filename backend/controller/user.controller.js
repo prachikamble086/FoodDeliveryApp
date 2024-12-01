@@ -2,6 +2,7 @@ const User = require("../models/user.model");
 const UserAddress = require("../models/address.model");
 const PaymentDetails = require("../models/payment.model");
 const Cart = require("../models/cart.model");
+const Food = require("../models/food.model");
 const mongoose = require("mongoose");
 
 const getUserProfileById = async (req, res) => {
@@ -219,6 +220,7 @@ const getPaymentDetailsById = async (req, res) => {
 const postCartById = async (req, res) => {
   try {
     let { userId } = req.params;
+    const { itemId, quantity } = req.body;
     userId = userId.trim();
 
     if (!mongoose.Types.ObjectId.isValid(userId)) {
@@ -234,23 +236,29 @@ const postCartById = async (req, res) => {
 
     let cart = await Cart.findOne({ userId });
 
-    if (cart) {
-      const { itemId, quantity } = req.body;
+    if (!mongoose.Types.ObjectId.isValid(itemId)) {
+      return res.status(400).json({
+        message: "Invalid user ID format",
+      });
+    }
 
+    const itemFood = await Food.findById(itemId);
+    if (!itemFood) {
+      return res.status(404).json({ message: "Item not found" });
+    }
+
+    if (cart) {
       if (!itemId || !quantity) {
         return res
           .status(400)
           .json({ message: "Item ID and quantity are required" });
       }
 
-      const isValidItemId = /^[a-fA-F0-9]{24}$/.test(itemId);
-      if (!isValidItemId) {
-        return res.status(400).json({ message: "Invalid item ID format" });
-      }
-
       const itemIndex = cart.items.findIndex(
         (item) => item && item.toString() === itemId
       );
+      cart.subtotal += itemFood.price;
+      cart.total += itemFood.price;
 
       if (itemIndex > -1) {
         cart.quantity[itemIndex] += quantity;
@@ -269,16 +277,17 @@ const postCartById = async (req, res) => {
 
       cart = new Cart({
         userId,
-        subtotal: 0,
-        discount: 0,
-        deliveryFee: 0,
-        total: 0,
+        subtotal: itemFood.price, //food item price
+        discount: 50,
+        deliveryFee: 20,
+        total: itemFood.price - 30,
         items: [itemId],
         quantity: [quantity],
       });
     }
 
     await cart.save();
+    await cart.populate("items");
 
     res.status(200).json({ message: "Cart updated successfully", cart });
   } catch (error) {
@@ -309,6 +318,8 @@ const getCartById = async (req, res) => {
     }
 
     const cart = await Cart.findOne({ userId });
+    await cart.populate("items");
+
     if (!cart) {
       return res.status(404).json({
         message: "Cart details not found for this user",

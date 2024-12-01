@@ -219,6 +219,27 @@ const OrderPagePlus =
 const location =
   "https://res.cloudinary.com/drkzizaiv/image/upload/v1732762539/location_xaa84g.png";
 
+const Remove =
+  "https://res.cloudinary.com/drkzizaiv/image/upload/v1732967547/Remove_v8xwf0.png";
+
+const Share =
+  "https://res.cloudinary.com/drkzizaiv/image/upload/v1732968266/share_bwwziu.png";
+
+const ForwardButtonCart =
+  "https://res.cloudinary.com/drkzizaiv/image/upload/v1732987519/Forward_Button_2_ntmtfw.png";
+
+const CartCupon =
+  "https://res.cloudinary.com/drkzizaiv/image/upload/v1732987486/Forward_Button_1_lnrfdj.png";
+
+const Delivery =
+  "https://res.cloudinary.com/drkzizaiv/image/upload/v1732987824/Delivery_Scooter_dv81no.png";
+
+const Collection =
+  "https://res.cloudinary.com/drkzizaiv/image/upload/v1732987824/New_Store_lnzhmu.png";
+
+const CartCheckoutButton =
+  "https://res.cloudinary.com/drkzizaiv/image/upload/v1732991951/Forward_Button_3_uo68uz.png";
+
 export {
   LOGIN_HERO_IMAGE,
   LOGO_ORANGE,
@@ -298,4 +319,11 @@ export {
   LocationCkeckoutPage,
   OrderPagePlus,
   location,
+  Remove,
+  Share,
+  ForwardButtonCart,
+  CartCupon,
+  Delivery,
+  Collection,
+  CartCheckoutButton,
 };

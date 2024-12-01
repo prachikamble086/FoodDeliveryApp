@@ -36,7 +36,7 @@ const CheckoutPage = () => {
   const navigate = useNavigate();
 
   const handleDeliveryAddress = () => {
-    navigate("/checkoutpage/deliveryaddress");
+    navigate("/checkout/address");
   };
 
   const menuToDisplay = selectedRestaurant?.menu || productPage.menu;

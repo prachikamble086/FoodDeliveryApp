@@ -6,7 +6,7 @@ const Products = () => {
   const navigate = useNavigate();
 
   const handleRestaurantClick = (restaurant) => {
-    navigate("/product", { state: { selectedRestaurant: restaurant } });
+    navigate("/product/" + restaurant._id);
   };
 
   return (

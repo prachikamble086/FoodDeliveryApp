@@ -9,6 +9,7 @@ import OrderSuccessful from "./components/OrderSuccessful/OrderSuccessful";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import CheckoutPage from "./components/CheckoutPage/CheckoutPage";
 import DeliveryAddress from "./components/DeliveryAddress/DeliveryAddress";
+import CartList from "./components/CartList/CartList";
 
 function App() {
   return (
@@ -18,16 +19,13 @@ function App() {
           <Route path="/login" element={<SignIn />} />
           <Route path="/signup" element={<Register />} />
           <Route path="/home" element={<HomePage />} />
-          <Route path="/product" element={<ProductPage />} />
+          <Route path="/product/:restaurantId" element={<ProductPage />} />
           <Route path="/payment" element={<PaymentPage />} />
           <Route path="/order" element={<OrderSuccessful />} />
-          <Route
-            path="/checkoutpage/deliveryaddress"
-            element={<DeliveryAddress />}
-          />
-
-          <Route path="/profilepage" element={<ProfilePage />} />
-          <Route path="/checkoutpage" element={<CheckoutPage />} />
+          <Route path="/checkout/address" element={<DeliveryAddress />} />
+          <Route path="/cart" element={<CartList />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
         </Routes>
       </BrowserRouter>
     </>
