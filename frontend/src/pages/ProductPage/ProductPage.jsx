@@ -13,12 +13,15 @@ import "./ProductPage.css";
 import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import InformationCard from "../../components/InformationCard/InformationCard";
 import CustomerReviews from "../../components/CustomerReviews/CustomerReviews";
+import { useParams } from "react-router-dom";
+import Map from "../../components/Map/Map";
 // import Map from "../../components/Map/Map";
 
 const ProductPage = () => {
+  const { restaurantId } = useParams();
+
   const location = useLocation();
   const initialRestaurant = location.state?.selectedRestaurant || productPage;
-
   const [selectedRestaurant, setSelectedRestaurant] =
     useState(initialRestaurant);
 
@@ -79,7 +82,7 @@ const ProductPage = () => {
           ))}
         </div>
 
-        {/* <Map /> */}
+        <Map />
         <div className="popular-restaurants">
           <p className="similar-restaurants-title">Similar Restaurants</p>
           <div className="food-brands">

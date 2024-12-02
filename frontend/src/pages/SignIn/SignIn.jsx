@@ -7,35 +7,21 @@ import { LOGIN_HERO_IMAGE } from "../../constant";
 import "./SignIn.css";
 import axios from "axios";
 import { useState } from "react";
+import { postLoginRequest } from "./services/networkCalls";
+import { useAppContext } from "./context/context";
 
 function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const { setUser } = useAppContext();
+  const session = JSON.parse(localStorage.getItem("session"));
 
-  const handleSignInButton = async (e) => {
+  const handleSignIn = async (e) => {
     e.preventDefault();
-
-    const userInfo = {
-      email,
-      password,
-    };
-
-    try {
-      const response = await axios.post(
-        "http://localhost:3000/user/login",
-        userInfo
-      );
-      console.log(response.data);
-      if (response.data) {
-        alert("Login Successful");
-        navigate("/home");
-      }
-      localStorage.setItem("Users", JSON.stringify(response.data));
-    } catch (error) {
-      console.error("Login error:", error);
-      alert("Error: " + error.response?.data?.message || error.message);
-    }
+    postLoginRequest(email, password);
+    setUser(user);
+    navigate("/home");
   };
 
   return (
@@ -45,7 +31,7 @@ function SignIn() {
           <div className="order-logo">
             <OrderLogo width="150px" />
           </div>
-          <form className="signin" onSubmit={handleSignInButton}>
+          <form className="signin" onSubmit={handleSignIn}>
             <h2 className="welcom-back">Welcome Back 👋</h2>
             <p>
               {`Today is a new day. It's your day. You shape it. Sign in to

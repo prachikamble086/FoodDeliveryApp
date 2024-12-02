@@ -44,7 +44,9 @@ const ProfilePage = () => {
           </div>
         </div>
 
-        <div className="profile-page-footer">{/* <Footer /> */}</div>
+        <div className="profile-page-footer">
+          <Footer />
+        </div>
       </div>
     </>
   );

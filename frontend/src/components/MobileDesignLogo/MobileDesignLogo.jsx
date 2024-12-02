@@ -1,4 +1,3 @@
-import React from "react";
 import { Menu } from "../../constant";
 import OrderLogo from "../../components/OrderLogo/OrderLogo";
 import "./MobileDesignLogo.css";

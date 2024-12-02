@@ -1,9 +1,11 @@
 import OrderLogo from "../OrderLogo/OrderLogo";
 import { User } from "../../constant";
 import "./NavigationBar.css";
-import { homePageData } from "../../mock";
+import { useAppContext } from "../../context/context";
 
 const NavigationBar = () => {
+  const { homePageData } = useAppContext();
+
   return (
     <div>
       <div className="navigation-bar">

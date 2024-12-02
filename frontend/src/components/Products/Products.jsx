@@ -4,7 +4,6 @@ import "./Products.css";
 
 const Products = () => {
   const navigate = useNavigate();
-
   const handleRestaurantClick = (restaurant) => {
     navigate("/product/" + restaurant._id);
   };
