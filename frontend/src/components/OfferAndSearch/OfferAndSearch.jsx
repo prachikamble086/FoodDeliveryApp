@@ -1,11 +1,15 @@
 import "./OfferAndSearch.css";
 import { SearchIcon } from "../../constant";
+import { useAppContext } from "../../context/context";
+
 const OfferAndSearch = () => {
+  const { restaurantData } = useAppContext();
+
   return (
     <>
       <div className="offer-menu">
         <div className="offer-menu-header">
-          All Offers from McDonald’s East London
+          {`All Offers from ${restaurantData.restaurant.name}`}
         </div>
         <div className="input-and-icon">
           <img src={SearchIcon} alt="" className="search-icon" />

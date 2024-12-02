@@ -24,7 +24,7 @@ const HomePage = () => {
         <TopBannerMobileDesign />
         <ExclusiveDeals />
         <OrderPopularFoodCategories />
-        <Products />
+        <Products heading="Popular Restaurants" />
         <BottomBanner />
         <JoinApp />
         <KnowMoreCard />

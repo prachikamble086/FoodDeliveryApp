@@ -5,22 +5,25 @@ import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 import OrderLogo from "../../components/OrderLogo/OrderLogo";
 import { LOGIN_HERO_IMAGE } from "../../constant";
 import "./SignIn.css";
-import axios from "axios";
+
 import { useState } from "react";
-import { postLoginRequest } from "./services/networkCalls";
-import { useAppContext } from "./context/context";
+import { postLoginRequest } from "../../services/networkCalls";
+import { useAppContext } from "../../context/context";
 
 function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
   const { setUser } = useAppContext();
-  const session = JSON.parse(localStorage.getItem("session"));
 
   const handleSignIn = async (e) => {
     e.preventDefault();
-    postLoginRequest(email, password);
-    setUser(user);
+    const postLoginData = await postLoginRequest(email, password);
+    setUser(postLoginData.user);
+    localStorage.setItem("jwtToken", postLoginData.jwt);
+    localStorage.setItem("userId", postLoginData.user._id);
+
     navigate("/home");
   };
 
@@ -52,7 +55,7 @@ function SignIn() {
             <PrimaryButton type="submit" buttonContent="Sign In" />
           </form>
           <p>
-            Don't you have an account?{" "}
+            {`Don't you have an account?`}{" "}
             <button className="signup-button">Sign up</button>
           </p>
         </div>

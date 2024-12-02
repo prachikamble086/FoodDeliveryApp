@@ -123,3 +123,37 @@ export async function postLoginRequest(email, password) {
     console.log(error);
   }
 }
+
+export async function postRegisterRequest(name, email, password, phoneNumber) {
+  try {
+    const { data } = await axios.post(`${baseUrl}/auth/signup/`, {
+      name,
+      email,
+      password,
+      phoneNumber,
+    });
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function getRestaurantMenu(restaurantId) {
+  try {
+    const { data } = await axios.get(
+      `${baseUrl}/restaurant/${restaurantId}/menu`
+    );
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function getProductData(restaurantId) {
+  try {
+    const { data } = await axios.get(`${baseUrl}/restaurant/${restaurantId}`);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}

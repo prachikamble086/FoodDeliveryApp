@@ -3,9 +3,11 @@ import OfferAndCart from "../../components/OfferAndCart/OfferAndCart";
 import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import Footer from "../../components/Footer/Footer";
 import "./ProfilePage.css";
-import { Arrow, ArrowLeft, User } from "../../constant";
+import { Arrow, ArrowLeft, Plus, User } from "../../constant";
 import ProfilePageForm from "../../components/ProfilePageForm/ProfilePageForm";
+
 const ProfilePage = () => {
+  const addPaymentMethod = () => {};
   return (
     <>
       <div className="profile-page">
@@ -43,7 +45,10 @@ const ProfilePage = () => {
             <ProfilePageForm label="Country" />
           </div>
         </div>
-
+        <div>
+          <button onClick={addPaymentMethod}>+</button>
+          <div>Saved payment methods</div>
+        </div>
         <div className="profile-page-footer">
           <Footer />
         </div>

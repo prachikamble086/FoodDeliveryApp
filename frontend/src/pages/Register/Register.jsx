@@ -5,9 +5,11 @@ import Footer from "../../components/Footer/Footer";
 import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 import OrderLogo from "../../components/OrderLogo/OrderLogo";
 import { LOGIN_HERO_IMAGE } from "../../constant";
-import axios from "axios";
 import { Link } from "react-router-dom";
+
 import "./Register.css";
+import { postRegisterRequest } from "../../services/networkCalls";
+import { useAppContext } from "../../context/context";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -16,6 +18,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  const { setUser } = useAppContext();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -24,28 +27,15 @@ const Register = () => {
       return;
     }
 
-    const userInfo = {
+    const postRegisterRequestData = await postRegisterRequest(
       name,
-      phoneNumber,
       email,
       password,
-    };
-
-    try {
-      const response = await axios.post(
-        "http://localhost:3000/user/signup",
-        userInfo
-      );
-      console.log(response.data);
-      if (response.data) {
-        alert("Signup Successful");
-        navigate("/login");
-      }
-      localStorage.setItem("Users", JSON.stringify(response.data));
-    } catch (error) {
-      console.error("Signup error:", error);
-      alert("Error: " + error.response.data.message);
-    }
+      phoneNumber
+    );
+    setUser(postRegisterRequestData.user);
+    localStorage.setItem("jwtToken", postRegisterRequestData.jwt);
+    navigate("/home");
   };
 
   return (

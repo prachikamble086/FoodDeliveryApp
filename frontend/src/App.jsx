@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import SignIn from "./pages/SignIn/SignIn";
 import HomePage from "./pages/Home/Home";
 import ProductPage from "./pages/ProductPage/ProductPage";
@@ -13,47 +13,61 @@ import CartList from "./components/CartList/CartList";
 import { useEffect, useState } from "react";
 import { setupAuthHeaderForServiceCalls } from "./services/authTokenMiddleware";
 import { setupAuthExceptionHandler } from "./services/authExceptionHandler";
-import { getHomeData } from "./services/networkCalls";
+import { getHomeData, getUserData } from "./services/networkCalls";
 import { useAppContext } from "./context/context";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
-  const session = JSON.parse(localStorage.getItem("session"));
-
-  const { setHomePageData } = useAppContext();
+  const jwtToken = localStorage.getItem("jwtToken");
+  const userId = localStorage.getItem("userId");
+  const { setHomePageData, setUser } = useAppContext();
 
   function logoutUser() {
     setupAuthHeaderForServiceCalls(null);
+    localStorage.removeItem("jwtToken");
+    localStorage.removeItem("userId");
   }
 
   async function loadInitialData() {
     const homeData = await getHomeData();
     setHomePageData(homeData);
+
+    if (jwtToken) {
+      const userData = await getUserData(userId);
+      setUser(userData.user);
+    }
+
+    setIsLoading(false);
   }
 
   useEffect(() => {
-    setupAuthHeaderForServiceCalls(session?.jwt);
+    setupAuthHeaderForServiceCalls(jwtToken);
     setupAuthExceptionHandler(logoutUser, navigate);
+  }, [jwtToken, navigate]);
+
+  useEffect(() => {
     loadInitialData();
   }, []);
 
+  if (isLoading) {
+    return <div>loading...</div>;
+  }
+
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/login" element={<SignIn />} />
-          <Route path="/signup" element={<Register />} />
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/product/:restaurantId" element={<ProductPage />} />
-          <Route path="/payment" element={<PaymentPage />} />
-          <Route path="/order" element={<OrderSuccessful />} />
-          <Route path="/checkout/address" element={<DeliveryAddress />} />
-          <Route path="/cart" element={<CartList />} />
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/checkout" element={<CheckoutPage />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<SignIn />} />
+        <Route path="/signup" element={<Register />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/product/:restaurantId" element={<ProductPage />} />
+        <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/order" element={<OrderSuccessful />} />
+        <Route path="/checkout/address" element={<DeliveryAddress />} />
+        <Route path="/cart" element={<CartList />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+      </Routes>
     </>
   );
 }

@@ -1,6 +1,4 @@
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
-import { productPage } from "../../mock"; // Mock data
+import { useEffect, useState } from "react";
 import Footer from "../../components/Footer/Footer";
 import MobileDesignLogo from "../../components/MobileDesignLogo/MobileDesignLogo";
 import OfferAndCart from "../../components/OfferAndCart/OfferAndCart";
@@ -15,24 +13,50 @@ import InformationCard from "../../components/InformationCard/InformationCard";
 import CustomerReviews from "../../components/CustomerReviews/CustomerReviews";
 import { useParams } from "react-router-dom";
 import Map from "../../components/Map/Map";
+import { useAppContext } from "../../context/context";
+import {
+  getProductData as getRestaurantData,
+  getRestaurantMenu,
+  postCart,
+} from "../../services/networkCalls";
+import Products from "../../components/Products/Products";
+
 // import Map from "../../components/Map/Map";
 
 const ProductPage = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   const { restaurantId } = useParams();
 
-  const location = useLocation();
-  const initialRestaurant = location.state?.selectedRestaurant || productPage;
-  const [selectedRestaurant, setSelectedRestaurant] =
-    useState(initialRestaurant);
+  const {
+    restaurantMenu,
+    restaurantData,
+    setRestaurantData,
+    setRestaurantMenu,
+    setCart,
+    user,
+  } = useAppContext();
 
-  const handleRestaurantClick = (restaurant) => {
-    setSelectedRestaurant({
-      ...restaurant,
-      menu: productPage.menu,
-    });
+  async function loadInitialData() {
+    const restaurant = await getRestaurantData(restaurantId);
+    const restaurantMenuData = await getRestaurantMenu(restaurantId);
+    setRestaurantMenu(restaurantMenuData);
+    setRestaurantData(restaurant);
+    setIsLoading(false);
+  }
+
+  useEffect(() => {
+    loadInitialData();
+  }, []);
+
+  const addItemtoCart = async (itemId) => {
+    const postCartData = await postCart(user._id, itemId);
+    setCart(postCartData);
   };
 
-  const menuToDisplay = selectedRestaurant?.menu || productPage.menu;
+  if (isLoading) {
+    return <div>loading...</div>;
+  }
 
   return (
     <>
@@ -45,63 +69,54 @@ const ProductPage = () => {
         <ProductPageMenuBar />
         <FirstOrderProductPage />
         <div>
-          <h1>{selectedRestaurant.name}</h1>
-          {menuToDisplay?.map((category, categoryIndex) => (
-            <div key={categoryIndex}>
-              <h2 className="menu-category">{category.category}</h2>
-              <ul className="restaurant-menu-list">
-                {category.products.map((item, itemIndex) => (
-                  <li key={itemIndex} className="menu-list">
-                    <div className="menu-item-details">
-                      <div className="menu-item-name-description-price">
-                        <div className="menu-item-name">{item.name}</div>
-                        <div className="menu-item-description">
-                          {item.description}
+          {restaurantData.restaurant.categories.map(
+            (category, categoryIndex) => (
+              <div key={categoryIndex}>
+                <h2 className="menu-category">{category}</h2>
+                <ul className="restaurant-menu-list">
+                  {restaurantMenu.menuItems.map((foodItem, itemIndex) =>
+                    foodItem.category == category ? (
+                      <li key={itemIndex} className="menu-list">
+                        <div className="menu-item-details">
+                          <div className="menu-item-name-description-price">
+                            <div className="menu-item-name">
+                              {foodItem.name}
+                            </div>
+                            <div className="menu-item-description">
+                              {foodItem.description}
+                            </div>
+                            <div className="menu-item-price">
+                              {foodItem.price}
+                            </div>
+                          </div>
+                          <div className="menu-item-image-and-add-button">
+                            <img
+                              src={foodItem.img}
+                              alt={foodItem.name}
+                              className="menu-item-image"
+                            />
+                            <button className="menu-item-button">
+                              <img
+                                src={Plus}
+                                alt="Add"
+                                className="menu-item-add-button"
+                                onClick={() => addItemtoCart(foodItem._id)}
+                              />
+                            </button>
+                          </div>
                         </div>
-                        <div className="menu-item-price">{item.price}</div>
-                      </div>
-                      <div className="menu-item-image-and-add-button">
-                        <img
-                          src={item.img}
-                          alt={item.name}
-                          className="menu-item-image"
-                        />
-                        <button className="menu-item-button">
-                          <img
-                            src={Plus}
-                            alt="Add"
-                            className="menu-item-add-button"
-                          />
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+                      </li>
+                    ) : null
+                  )}
+                </ul>
+              </div>
+            )
+          )}
         </div>
 
         <Map />
-        <div className="popular-restaurants">
-          <p className="similar-restaurants-title">Similar Restaurants</p>
-          <div className="food-brands">
-            {productPage.similarRestaurants.map((restaurant) => (
-              <button
-                className="food-brands-buttons"
-                key={restaurant._id}
-                onClick={() => handleRestaurantClick(restaurant)}
-              >
-                <img
-                  src={restaurant.logo}
-                  alt=""
-                  className="food-brands-button-image"
-                />
-                <div className="popular-restaurant-name">{restaurant.name}</div>
-              </button>
-            ))}
-          </div>
-        </div>
+
+        <Products heading="Similar Restaurants" />
         <InformationCard />
         <CustomerReviews />
         <Footer />

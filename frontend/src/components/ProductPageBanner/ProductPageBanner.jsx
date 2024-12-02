@@ -6,8 +6,11 @@ import {
   ProductPageBannerImage,
   Ratings,
 } from "../../constant";
+import { useAppContext } from "../../context/context";
 
 const ProductPageBanner = () => {
+  const { restaurantData } = useAppContext();
+
   return (
     <>
       <div className="product-page-banner">
@@ -17,9 +20,11 @@ const ProductPageBanner = () => {
           className="product-page-banner-image-mobile-version"
         />
         <div className="product-banner-text">
-          <div className="restaurant-tagline">{`I'm lovin' it!`}</div>
+          <div className="restaurant-tagline">
+            {restaurantData.restaurant.tagline}
+          </div>
           <div className="product-banner-restaurant-name">
-            McDonald’s East London
+            {restaurantData.restaurant.name}
           </div>
           <div className="restaurant-add">
             <div className="order-completed">

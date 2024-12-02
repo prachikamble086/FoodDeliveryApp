@@ -4,7 +4,8 @@ const Context = createContext();
 
 export const ContextProvider = ({ children }) => {
   const [homePageData, setHomePageData] = useState(null);
-  const [productPage, setProductPage] = useState(null);
+  const [restaurantData, setRestaurantData] = useState(null);
+  const [restaurantMenu, setRestaurantMenu] = useState(null);
   const [user, setUser] = useState(null);
   const [address, setAddress] = useState(null);
   const [payment, setPayment] = useState(null);
@@ -13,8 +14,10 @@ export const ContextProvider = ({ children }) => {
   const data = {
     homePageData,
     setHomePageData,
-    productPage,
-    setProductPage,
+    restaurantData,
+    setRestaurantData,
+    restaurantMenu,
+    setRestaurantMenu,
     user,
     setUser,
     address,
