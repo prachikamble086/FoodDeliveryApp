@@ -44,7 +44,7 @@ function App() {
   useEffect(() => {
     setupAuthHeaderForServiceCalls(jwtToken);
     setupAuthExceptionHandler(logoutUser, navigate);
-  }, [jwtToken, navigate]);
+  }, []);
 
   useEffect(() => {
     loadInitialData();
@@ -66,7 +66,7 @@ function App() {
         <Route path="/checkout/address" element={<DeliveryAddress />} />
         <Route path="/cart" element={<CartList />} />
         <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/checkout/:userId/:cartId" element={<CheckoutPage />} />
       </Routes>
     </>
   );

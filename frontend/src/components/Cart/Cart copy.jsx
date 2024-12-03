@@ -1,44 +1,37 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useAppContext } from "../../context/context";
-import { useNavigate, useParams } from "react-router-dom";
-import { Remove } from "../../constant";
-import "./Cart.css";
 import { getCartData } from "../../services/networkCalls";
+import { ShoppingBasket, ForwardButton } from "../../constant";
+import "./Cart.css";
 
 const Cart = () => {
   const { cart, setCart, user } = useAppContext();
-  const navigate = useNavigate();
-  const { cartId, userId } = useParams();
-  const loadCartData = async () => {
+  const [isCartVisible, setIsCartVisible] = useState(false);
+
+  const handleCartClick = async () => {
     if (user) {
       try {
         const cartData = await getCartData(user._id);
-        setCart(cartData.cart);
+        setCart(cartData.cart); // Update cart with fetched data
       } catch (error) {
         console.error("Error fetching cart data:", error);
-        setCart({ items: [], quantity: [] });
+        setCart({ items: [], quantity: [] }); // Set to empty cart on error
       }
-    }
-  };
-
-  useEffect(() => {
-    loadCartData();
-  }, [user]);
-
-  const handleCheckout = () => {
-    if (user && cart) {
-      navigate(`/checkout/${user._id}/${cartId}`, { state: { cart } });
+      setIsCartVisible(!isCartVisible); // Toggle cart visibility
     }
   };
 
   const handleDelete = (itemId) => {
+    // Find the index of the item in the cart
     const itemIndex = cart.items.findIndex((item) => item._id === itemId);
 
     if (itemIndex !== -1) {
+      // If the item quantity is greater than 1, decrease the quantity by 1
       if (cart.quantity[itemIndex] > 1) {
         const updatedQuantity = [...cart.quantity];
         updatedQuantity[itemIndex] -= 1;
 
+        // Update cart state with decreased quantity
         setCart({
           ...cart,
           quantity: updatedQuantity,
@@ -55,6 +48,7 @@ const Cart = () => {
             cart.discount,
         });
       } else {
+        // If quantity is 1, remove the item completely
         const updatedItems = cart.items.filter((item) => item._id !== itemId);
         const updatedQuantity = cart.quantity.filter(
           (_, index) => index !== itemIndex
@@ -81,54 +75,64 @@ const Cart = () => {
   };
 
   return (
-    <div className="cart-items">
-      {cart?.items?.length > 0 ? (
-        <>
-          <ul className="menu">
-            {cart.items.map((item, index) => (
-              <li key={item._id} className="cart-item">
-                <div className="basket">
-                  <div className="item-quantity">{cart.quantity[index]}</div>
-                  <div className="price-item-add-ons">
-                    <div className="basket-item-cost">${item.price}</div>
-                    <div className="basket-item">
+    <>
+      <div className="cart">
+        <button className="cart-button" onClick={handleCartClick}>
+          <div className="cart-image">
+            <img
+              className="shopping-basket"
+              src={ShoppingBasket}
+              alt="ShoppingBasket"
+            />
+            <p>My cart</p>
+          </div>
+          <img
+            className="forward-button"
+            src={ForwardButton}
+            alt="ForwardButton"
+          />
+        </button>
+      </div>
+
+      {isCartVisible && (
+        <div className="cart-items">
+          {cart?.items?.length > 0 ? (
+            <>
+              <h3>My Cart</h3>
+              <ul>
+                {cart.items.map((item, index) => (
+                  <li key={item._id} className="cart-item">
+                    <div>
                       <strong>{item.name}</strong>
                       <p>{item.description}</p>
+                      <p>Price: ${item.price}</p>
+                      <p>Qty: {cart.quantity[index]}</p>
                     </div>
-                  </div>
-                  <div className="delete-items">
                     <button
                       className="delete-button"
                       onClick={() => handleDelete(item._id)}
                     >
-                      <img src={Remove} alt="Delete" />
+                      <span className="delete-icon">X</span>
                     </button>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-          <div className="total-discount-delivery-fee">
-            <div className="subtotal">
-              <div>Sub Total</div>
-              <div className="subtotal-price">${cart.subtotal ?? "N/A"}</div>
+                  </li>
+                ))}
+              </ul>
+              <div className="cart-summary">
+                <p>Subtotal: ${cart.subtotal}</p>
+                <p>Discount: ${cart.discount}</p>
+                <p>Delivery Fee: ${cart.deliveryFee}</p>
+                <h4>Total: ${cart.total}</h4>
+              </div>
+            </>
+          ) : (
+            <div>
+              <h3>My Cart</h3>
+              <p>Your cart is empty.</p>
             </div>
-          </div>
-          <button className="total-to-pay-button">
-            <div>Total to pay</div>
-            <div>${cart.total ?? "N/A"}</div>
-          </button>
-          <button className="checkout-cart-button" onClick={handleCheckout}>
-            Checkout
-          </button>
-        </>
-      ) : (
-        <div>
-          <h3>My Cart</h3>
-          <p>Your cart is empty.</p>
+          )}
         </div>
       )}
-    </div>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 import React from "react";
 import "./CheckoutItem.css";
+
 const CheckoutItem = ({
   imageCheckoutPage,
   Item,
@@ -7,15 +8,13 @@ const CheckoutItem = ({
   costOfItem,
 }) => {
   return (
-    <div>
-      <div className="checkout-item-and-info">
-        <div className="checkout-cotainer">
-          <div className="checkout-image-cotainer">
-            <img src={imageCheckoutPage} alt="" className="item-icon-image" />
-            <div className="checkout-text">
-              <div>{Item}</div>
-              <div>{NumberofItem}</div>
-            </div>
+    <div className="checkout-item-and-info">
+      <div className="checkout-container">
+        <div className="checkout-image-container">
+          <img src={imageCheckoutPage} alt={Item} className="item-icon-image" />
+          <div className="checkout-text">
+            <div>{Item}</div>
+            <div>{NumberofItem}</div>
           </div>
         </div>
         <div>{costOfItem}</div>
