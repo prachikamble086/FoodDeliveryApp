@@ -1,7 +1,7 @@
 import OrderLogo from "../OrderLogo/OrderLogo";
 import { User } from "../../constant";
 import "./NavigationBar.css";
-import { useAppContext } from "../../context/Context";
+import { useAppContext } from "../../context/context";
 
 const NavigationBar = () => {
   const { homePageData } = useAppContext();

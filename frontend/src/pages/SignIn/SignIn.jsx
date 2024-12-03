@@ -8,7 +8,7 @@ import "./SignIn.css";
 
 import { useState } from "react";
 import { postLoginRequest } from "../../services/networkCalls";
-import { useAppContext } from "../../context/Context";
+import { useAppContext } from "../../context/context";
 
 function SignIn() {
   const [email, setEmail] = useState("");

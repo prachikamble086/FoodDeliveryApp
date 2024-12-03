@@ -1,6 +1,6 @@
 import "./OfferAndSearch.css";
 import { SearchIcon } from "../../constant";
-import { useAppContext } from "../../context/Context";
+import { useAppContext } from "../../context/context";
 
 const OfferAndSearch = () => {
   const { restaurantData } = useAppContext();
