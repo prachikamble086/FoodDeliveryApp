@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAppContext } from "../../context/context";
+import { useAppContext } from "../../context/context.jsx";
 import { getCartData } from "../../services/networkCalls";
 import { ShoppingBasket, ForwardButton } from "../../constant";
 import "./Cart.css";

@@ -5,7 +5,7 @@ import MobileDesignLogo from "../MobileDesignLogo/MobileDesignLogo";
 import OfferAndCart from "../OfferAndCart/OfferAndCart";
 import NavigationBar from "../NavigationBar/NavigationBar";
 import CheckoutItem from "../CheckoutItem/CheckoutItem";
-import { useAppContext } from "../../context/context";
+import { useAppContext } from "../../context/context.jsx";
 import { getCartData, getRestaurantMenu } from "../../services/networkCalls"; // Assuming network calls are properly set up
 import "./CheckoutPage.css";
 

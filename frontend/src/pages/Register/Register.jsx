@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 import "./Register.css";
 import { postRegisterRequest } from "../../services/networkCalls";
-import { useAppContext } from "../../context/context";
+import { useAppContext } from "../../context/context.jsx";
 
 const Register = () => {
   const [name, setName] = useState("");

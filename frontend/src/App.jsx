@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 import { setupAuthHeaderForServiceCalls } from "./services/authTokenMiddleware";
 import { setupAuthExceptionHandler } from "./services/authExceptionHandler";
 import { getHomeData, getUserData } from "./services/networkCalls";
-import { useAppContext } from "./context/context";
+import { useAppContext } from "./context/context.jsx";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);

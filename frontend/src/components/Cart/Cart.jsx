@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useAppContext } from "../../context/context";
+import { useAppContext } from "../../context/context.jsx";
 import { useNavigate, useParams } from "react-router-dom";
 import { Remove } from "../../constant";
 import "./Cart.css";
