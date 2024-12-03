@@ -12,7 +12,7 @@ import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import InformationCard from "../../components/InformationCard/InformationCard";
 import CustomerReviews from "../../components/CustomerReviews/CustomerReviews";
 import { useParams } from "react-router-dom";
-import { useAppContext } from "../../context/context";
+import { useAppContext } from "../../context/Context";
 import {
   getCartData,
   getProductData as getRestaurantData,

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./Products.css";
-import { useAppContext } from "../../context/context";
+import { useAppContext } from "../../context/Context";
 
 const Products = ({ heading }) => {
   const navigate = useNavigate();

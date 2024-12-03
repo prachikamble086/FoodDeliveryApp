@@ -6,7 +6,7 @@ import {
   ProductPageBannerImage,
   Ratings,
 } from "../../constant";
-import { useAppContext } from "../../context/context";
+import { useAppContext } from "../../context/Context";
 
 const ProductPageBanner = () => {
   const { restaurantData } = useAppContext();
