@@ -59,7 +59,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<SignIn />} />
         <Route path="/signup" element={<Register />} />
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/product/:restaurantId" element={<ProductPage />} />
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/order" element={<OrderSuccessful />} />

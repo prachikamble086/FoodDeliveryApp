@@ -24,7 +24,7 @@ function SignIn() {
     localStorage.setItem("jwtToken", postLoginData.jwt);
     localStorage.setItem("userId", postLoginData.user._id);
 
-    navigate("/home");
+    navigate("/");
   };
 
   return (
