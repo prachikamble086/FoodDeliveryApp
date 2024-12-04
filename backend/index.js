@@ -16,7 +16,19 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+const whitelist = ["https://food-app-prachi.netlify.app/"];
+const corsOptions = {
+  origin: whitelist,
+  optionsSuccessStatus: 200,
+  credentials: true,
+};
+
+if (process.env.NODE_ENV === "development") {
+  app.use(cors({ origin: true, credentials: true }));
+} else {
+  app.use(cors(corsOptions));
+}
+
 app.use(express.json());
 
 connectDb();
