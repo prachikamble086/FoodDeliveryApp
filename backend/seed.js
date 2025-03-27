@@ -4,7 +4,7 @@ const { connectDb } = require("./models/db.js");
 
 const restaurantSeedData = [
   {
-    logo: "https://res.cloudinary.com/drkzizaiv/image/upload/v1732090822/Male_User_xpjbo4.png",
+    logo: "https://res.cloudinary.com/drkzizaiv/image/upload/v1732090821/cd_l46dzc.png",
     name: "McDonald’s London",
     tagline: "great",
     rating: "4",
@@ -15,7 +15,7 @@ const restaurantSeedData = [
   },
 
   {
-    logo: "https://res.cloudinary.com/drkzizaiv/image/upload/v1732090822/Male_User_xpjbo4.png",
+    logo: "https://res.cloudinary.com/drkzizaiv/image/upload/v1732187736/papa-johns_kbjbbj.png",
     name: "Papa John's",
     tagline: "The greatest burger",
     rating: "4",
@@ -26,7 +26,7 @@ const restaurantSeedData = [
   },
 
   {
-    logo: "https://res.cloudinary.com/drkzizaiv/image/upload/v1732090822/Male_User_xpjbo4.png",
+    logo: "https://res.cloudinary.com/drkzizaiv/image/upload/v1732090816/kfc_oosoff.png",
     name: "KFC West London",
     tagline: "great",
     rating: "4",
@@ -37,7 +37,7 @@ const restaurantSeedData = [
   },
 
   {
-    logo: "https://res.cloudinary.com/drkzizaiv/image/upload/v1732090822/Male_User_xpjbo4.png",
+    logo: "https://res.cloudinary.com/drkzizaiv/image/upload/v1732187714/TexasChicken_bugjcx.png",
     name: "Texas Chicken",
     tagline: "great",
     rating: "4",
@@ -48,7 +48,7 @@ const restaurantSeedData = [
   },
 
   {
-    logo: "https://res.cloudinary.com/drkzizaiv/image/upload/v1732090822/Male_User_xpjbo4.png",
+    logo: "https://res.cloudinary.com/drkzizaiv/image/upload/v1732090812/BurgerKing_fqee3c.png",
     name: "Burger King",
     tagline: "great",
     rating: "4",
@@ -59,7 +59,7 @@ const restaurantSeedData = [
   },
 
   {
-    logo: "https://res.cloudinary.com/drkzizaiv/image/upload/v1732090822/Male_User_xpjbo4.png",
+    logo: "https://res.cloudinary.com/drkzizaiv/image/upload/v1732090812/Shaurma_mowj9q.png",
     name: "Shaurma 1",
     tagline: "great",
     rating: "4",
@@ -560,8 +560,8 @@ const seedFood = [
 
 const seedData = async () => {
   await connectDb();
-  // await Food.insertMany(seedFood);
-  // await Restaurant.insertMany(restaurantSeedData);
+  await Food.insertMany(seedFood);
+  await Restaurant.insertMany(restaurantSeedData);
 
   console.log("done seeding");
 };

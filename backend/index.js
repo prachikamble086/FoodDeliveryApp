@@ -14,10 +14,12 @@ const { auth } = require("./middlewares/auth.middleware.js");
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
+
 
 const whitelist = ["https://food-app-prachi.netlify.app/"];
 const corsOptions = {
+  
   origin: whitelist,
   optionsSuccessStatus: 200,
   credentials: true,
