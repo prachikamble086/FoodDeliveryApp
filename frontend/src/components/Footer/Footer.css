@@ -31,9 +31,18 @@
   .order-logo-playstore {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    align-items: start;
+    gap: 1.5rem;
     font-size: 0.8rem;
+    justify-content: flex-start;
+  }
+
+  .address-logo {
+    margin: 0;
+  }
+
+  .footer-order-logo {
+    height: 3.5rem;
+    width: 15rem;
   }
 
   .subscribe-section {
@@ -44,21 +53,21 @@
 
   .subscribe-email-button {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     border-radius: 10rem;
+    position: relative;
   }
 
   .subscribe-email {
     border-radius: 10rem;
     display: flex;
     align-items: start;
-    width: 20rem;
-    position: relative;
+    width: 23rem;
     height: 3rem;
     background-color: #d9d9d9;
     color: #00000099;
-    position: relative;
+
     border: 2px solid black;
   }
 
@@ -66,7 +75,8 @@
     padding: 1rem;
     border-radius: 10rem;
     position: absolute;
-    right: 35rem;
+
+    /* right: auto; */
     width: 10rem;
     color: white;
     background-color: #fc8a06;
@@ -99,7 +109,15 @@
   }
 
   .play-store-badges {
-    width: 15rem;
+    display: flex;
+    /* justify-content: center; */
+    gap: 1rem;
+  }
+
+  .appStore-image-footer,
+  .googlePlay-image-footer {
+    height: 2.5rem;
+    width: auto;
   }
 
   .subscribe-section-title,

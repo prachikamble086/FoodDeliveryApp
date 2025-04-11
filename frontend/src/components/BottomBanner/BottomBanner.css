@@ -7,49 +7,68 @@
 
   .personalized-and-instant-card-details {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    justify-content: space-around;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    /* align-items: center; */
   }
 
   .logo-and-text {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     align-items: center;
-    justify-content: space-around;
-    margin-bottom: 1rem;
+    /* justify-content: space-around; */
+    /* margin-bottom: 1rem; */
   }
 
   .text-after-logo {
     font-size: 30px;
     font-weight: 700;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
+    /* margin-top: 3rem; */
+    /* margin-bottom: 1rem; */
     padding-bottom: 0;
   }
 
   .logo-text-and-card {
     display: flex;
     flex-direction: column;
-    left: 0;
+    /* align-items: center; */
+    gap: 1rem;
+    margin-top: auto;
+    margin-bottom: auto;
+
   }
 
   .personalized-and-instant-card-text {
     display: flex;
+    height: auto;
     font-weight: 500;
-    font-size: 2rem;
+    font-size: 1.8rem;
+    justify-content: center;
+    align-items: center;
+    width: auto;
     color: white;
     background-color: black;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    /* padding-left: 1rem; */
+    /* padding-right: 1rem; */
     border-radius: 10rem;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
+    padding: 1rem;
   }
 
   .personalised {
     color: #fc8a06;
     text-decoration: underline;
     padding-top: 0;
-    margin-bottom: 0.5rem;
+    margin: 0;
+    padding-bottom: 0;
+  }
+
+  .instant-logo-text {
+    padding-top: 0;
+    margin: 0;
+    padding-left: 0.5rem;
     padding-bottom: 0;
   }
 
@@ -61,6 +80,12 @@
     display: none;
   }
 
+  .personalized-and-instant-card-image{
+    width: 35rem;
+    height: auto;
+    /* padding: 1rem; */
+  }
+
   .faster-ordering {
     font-size: 18px;
     font-weight: 500;
@@ -68,6 +93,20 @@
     padding-top: 0;
     margin-bottom: 1rem;
     padding-bottom: 0;
+  }
+
+  .app-badges{
+    /* height: 2rem; */
+    display: flex;
+    justify-content: space-around;
+    /* margin: 0; */
+  }
+
+  .appStore-image,.googlePlay-image{
+    height: 3.2rem;
+    width: auto ;
+
+
   }
 }
 
@@ -83,6 +122,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
   }
 
   .logo-and-text-mobile {
@@ -100,6 +140,7 @@
 
   .logo-and-text {
     display: none;
+    align-items: center;
   }
 
   .text-after-logo {

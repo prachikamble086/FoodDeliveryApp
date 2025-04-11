@@ -24,7 +24,7 @@ const HomePage = () => {
       <div>
         <MobileDesignLogo />
         <OfferAndCart />
-        <button
+        {/* <button
           className="cart-button"
           onClick={() => setIsCartVisible(!isCartVisible)}
         >
@@ -37,7 +37,7 @@ const HomePage = () => {
             <p>My cart</p>
           </div>
         </button>
-        {isCartVisible && <Cart />}
+        {isCartVisible && <Cart />} */}
 
         <NavigationBar />
         {/* <TopBanner /> */}

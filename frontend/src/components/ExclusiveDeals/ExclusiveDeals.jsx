@@ -20,12 +20,12 @@ const ExclusiveDeals = () => {
               Pizza & Fast Food
             </button>
           </div>
-          <div className="cuisine">
+          {/* <div className="cuisine">
             <button className="cuisine-type">Vegan</button>
             <button className="cuisine-type">Sushi</button>
             <button className="cuisine-type-selected">Pizza & Fast food</button>
             <button className="cuisine-type">Others</button>
-          </div>
+          </div> */}
         </div>
         <div className="exclusive-deals-and-offer">
           <ExclusiveDealsCard

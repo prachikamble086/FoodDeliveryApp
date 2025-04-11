@@ -41,9 +41,13 @@ const getMenuByRestaurantId = async (req, res) => {
       });
     }
 
-    const menuItems = await Food.find({ restaurantId });
+    // const menuItems = await Food.find({ restaurantId });
+    const menuItems = await Food.find({
+      restaurantId: new mongoose.Types.ObjectId(restaurantId),
+    });
 
     if (!menuItems || menuItems.length === 0) {
+      console.log("what is your problem");
       return res.status(404).json({
         message: "No menu items found for this restaurant",
       });

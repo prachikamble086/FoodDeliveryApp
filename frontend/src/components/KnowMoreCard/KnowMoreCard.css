@@ -2,7 +2,7 @@
   .know-more-card {
     margin-left: 2rem;
     margin-right: 2rem;
-    background-color: #d9d9d9;
+    background: linear-gradient(180deg, #eeeeee 0%, #e0e1dc 100%);
     padding: 2rem;
   }
 
@@ -13,8 +13,9 @@
 
   .know-more-card-header {
     width: 30%;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
+    padding-bottom: 1rem;
   }
 
   .support {
@@ -59,6 +60,7 @@
     flex-direction: column;
     background-color: white;
     padding: 1rem;
+    font-size: 1rem;
   }
 
   .order-process-card {
@@ -85,12 +87,14 @@
     border: none;
     font-weight: 700;
     background-color: #fc8a06;
+    font-size: 1rem;
   }
 
   .questions-list-button {
     background-color: white;
     border: none;
     font-weight: 700;
+    font-size: 1rem;
   }
 
   .order-process-para-mobile-version {

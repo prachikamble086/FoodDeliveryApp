@@ -12,13 +12,13 @@ const NavigationBar = () => {
         <div className="logo">
           <OrderLogo width="200rem" />
         </div>
-        <div className="nav-bar">
+        {/* <div className="nav-bar">
           {homePageData.navigation.map((navItem) => (
             <button key={navItem} className={"nav-bar-button"}>
               {navItem}
             </button>
           ))}
-        </div>
+        </div> */}
         <div className="login-signup">
           <button className="login-signup-button">
             <img src={User} alt="" />

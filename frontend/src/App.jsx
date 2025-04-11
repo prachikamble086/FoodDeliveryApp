@@ -10,7 +10,7 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import CheckoutPage from "./components/CheckoutPage/CheckoutPage";
 import DeliveryAddress from "./components/DeliveryAddress/DeliveryAddress";
 import CartList from "./components/CartList/CartList";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { setupAuthHeaderForServiceCalls } from "./services/authTokenMiddleware";
 import { setupAuthExceptionHandler } from "./services/authExceptionHandler";
 import { getHomeData, getUserData } from "./services/networkCalls";
@@ -29,7 +29,7 @@ function App() {
     localStorage.removeItem("userId");
   }
 
-  async function loadInitialData() {
+  const loadInitialData = useCallback(async () => {
     const homeData = await getHomeData();
     setHomePageData(homeData);
 
@@ -39,16 +39,16 @@ function App() {
     }
 
     setIsLoading(false);
-  }
+  }, [jwtToken, setHomePageData, setUser, userId]);
 
   useEffect(() => {
     setupAuthHeaderForServiceCalls(jwtToken);
     setupAuthExceptionHandler(logoutUser, navigate);
-  }, []);
+  }, [jwtToken, navigate]);
 
   useEffect(() => {
     loadInitialData();
-  }, []);
+  }, [loadInitialData]);
 
   if (isLoading) {
     return <div>loading...</div>;

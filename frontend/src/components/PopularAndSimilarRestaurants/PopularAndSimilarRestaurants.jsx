@@ -32,33 +32,37 @@ const PopularAndSimilarRestaurants = () => {
               <div key={categoryIndex}>
                 <h2 className="menu-category">{category.category}</h2>
                 <ul className="restaurant-menu-list">
-                  {category.products.map((item, itemIndex) => (
-                    <li key={itemIndex} className="menu-list">
-                      <div className="menu-item-details">
-                        <div className="menu-item-name-description-price">
-                          <div className="menu-item-name">{item.name}</div>
-                          <div className="menu-item-description">
-                            {item.description}
+                  {category.products.map((item, itemIndex) => {
+                    console.log({ item });
+
+                    return (
+                      <li key={itemIndex} className="menu-list">
+                        <div className="menu-item-details">
+                          <div className="menu-item-name-description-price">
+                            <div className="menu-item-name">{item.name}</div>
+                            <div className="menu-item-description">
+                              {item.description}
+                            </div>
+                            <div className="menu-item-price">{item.price}</div>
                           </div>
-                          <div className="menu-item-price">{item.price}</div>
-                        </div>
-                        <div className="menu-item-image-and-add-button">
-                          <img
-                            src={item.img}
-                            alt={item.name}
-                            className="menu-item-image"
-                          />
-                          <button className="menu-item-button">
+                          <div className="menu-item-image-and-add-button">
                             <img
-                              src={Plus}
-                              alt="Add"
-                              className="menu-item-add-button"
+                              src={item.img}
+                              alt={item.name}
+                              className="menu-item-image"
                             />
-                          </button>
+                            <button className="menu-item-button">
+                              <img
+                                src={Plus}
+                                alt="Add"
+                                className="menu-item-add-button"
+                              />
+                            </button>
+                          </div>
                         </div>
-                      </div>
-                    </li>
-                  ))}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             ))}

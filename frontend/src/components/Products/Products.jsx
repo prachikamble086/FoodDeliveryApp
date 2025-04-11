@@ -10,7 +10,6 @@ const Products = ({ heading }) => {
     navigate("/product/" + restaurant._id);
   };
 
-  console.log(homePageData);
   return (
     <>
       <div className="popular-restaurants-homePage">

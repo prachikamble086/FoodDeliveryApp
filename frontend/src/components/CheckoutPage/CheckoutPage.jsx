@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useCallback, useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import MobileDesignLogo from "../MobileDesignLogo/MobileDesignLogo";
 import OfferAndCart from "../OfferAndCart/OfferAndCart";
@@ -10,7 +10,6 @@ import { getCartData, getRestaurantMenu } from "../../services/networkCalls"; //
 import "./CheckoutPage.css";
 
 const CheckoutPage = () => {
-  const { cartId } = useParams();
   const navigate = useNavigate();
   const { state } = useLocation(); // For receiving cart data if passed via state
   const { user, setCart } = useAppContext();
@@ -19,7 +18,7 @@ const CheckoutPage = () => {
   const [cartDetails, setCartDetails] = useState(state?.cart || null);
   const [restaurantDetails, setRestaurantDetails] = useState(null);
 
-  const fetchCartData = async () => {
+  const fetchCartData = useCallback(async () => {
     if (!cartDetails) {
       const cartData = await getCartData(user._id);
       setCartDetails(cartData);
@@ -29,11 +28,11 @@ const CheckoutPage = () => {
     }
 
     setIsLoading(false);
-  };
+  }, [cartDetails, setCart, user._id]);
 
   useEffect(() => {
     fetchCartData();
-  }, [cartId, user]);
+  }, [fetchCartData]);
 
   const handleDeliveryAddress = () => {
     navigate("/checkout/address");

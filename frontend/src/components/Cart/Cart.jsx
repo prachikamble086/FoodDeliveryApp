@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 import { useAppContext } from "../../context/context.jsx";
 import { useNavigate, useParams } from "react-router-dom";
 import { Remove } from "../../constant";
@@ -8,8 +8,9 @@ import { getCartData } from "../../services/networkCalls";
 const Cart = () => {
   const { cart, setCart, user } = useAppContext();
   const navigate = useNavigate();
-  const { cartId, userId } = useParams();
-  const loadCartData = async () => {
+  const { cartId } = useParams();
+
+  const loadCartData = useCallback(async () => {
     if (user) {
       try {
         const cartData = await getCartData(user._id);
@@ -19,11 +20,11 @@ const Cart = () => {
         setCart({ items: [], quantity: [] });
       }
     }
-  };
+  }, [setCart, user]);
 
   useEffect(() => {
     loadCartData();
-  }, [user]);
+  }, [loadCartData]);
 
   const handleCheckout = () => {
     if (user && cart) {

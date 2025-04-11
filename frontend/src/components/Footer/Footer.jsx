@@ -1,5 +1,5 @@
 import OrderLogo from "../OrderLogo/OrderLogo";
-import { PlayStoreBadges } from "../../constant";
+import { appStore, googlePlay, PlayStoreBadges } from "../../constant";
 import { Instagram } from "../../constant";
 import { Snapchat } from "../../constant";
 import { Facebook } from "../../constant";
@@ -11,9 +11,23 @@ const Footer = () => {
       <div className="footer-and-links">
         <div className="links-on-signin-page">
           <div className="order-logo-playstore">
-            <OrderLogo variant="black" />
-            <img src={PlayStoreBadges} alt="" className="play-store-badges" />
-            <p>Company # 490039-445, Registered with House of companies</p>
+            <OrderLogo variant="black" className="footer-order-logo" />
+            {/* <img src={PlayStoreBadges} alt="" className="play-store-badges" /> */}
+            <div className="play-store-badges">
+              <img
+                src={googlePlay}
+                alt="googlePlay"
+                className="googlePlay-image-footer"
+              />
+              <img
+                src={appStore}
+                alt="appStore"
+                className="appStore-image-footer"
+              />
+            </div>
+            <p className="address-logo">
+              Company # 490039-445, Registered with House of companies
+            </p>
           </div>
           <div className="subscribe-section">
             <p className="subscribe-section-title">

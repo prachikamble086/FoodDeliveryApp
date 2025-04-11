@@ -35,6 +35,8 @@ const Register = () => {
     );
     setUser(postRegisterRequestData.user);
     localStorage.setItem("jwtToken", postRegisterRequestData.jwt);
+    localStorage.setItem("userId", postRegisterRequestData.user._id);
+
     navigate("/");
   };
 

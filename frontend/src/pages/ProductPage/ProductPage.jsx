@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Footer from "../../components/Footer/Footer";
 import MobileDesignLogo from "../../components/MobileDesignLogo/MobileDesignLogo";
 import OfferAndCart from "../../components/OfferAndCart/OfferAndCart";
@@ -11,7 +11,7 @@ import "./ProductPage.css";
 import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import InformationCard from "../../components/InformationCard/InformationCard";
 import CustomerReviews from "../../components/CustomerReviews/CustomerReviews";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useAppContext } from "../../context/context.jsx";
 import {
   getCartData,
@@ -34,8 +34,9 @@ const ProductPage = () => {
     user,
   } = useAppContext();
   const [isCartVisible, setIsCartVisible] = useState(false);
+  const navigate = useNavigate();
 
-  async function loadInitialData() {
+  const loadInitialData = useCallback(async () => {
     const restaurant = await getRestaurantData(restaurantId);
     const restaurantMenuData = await getRestaurantMenu(restaurantId);
     const cartMenuData = await getCartData(userId);
@@ -43,11 +44,11 @@ const ProductPage = () => {
     setRestaurantData(restaurant);
     setCart(cartMenuData);
     setIsLoading(false);
-  }
+  }, [restaurantId, setCart, setRestaurantData, setRestaurantMenu, userId]);
 
   useEffect(() => {
     loadInitialData();
-  }, []);
+  }, [loadInitialData]);
 
   const addItemToCart = async (itemId) => {
     const postCartData = await postCart(user._id, itemId);
@@ -59,6 +60,10 @@ const ProductPage = () => {
     return <div>Loading...</div>;
   }
 
+  function handleCartClick() {
+    navigate("/cart");
+  }
+
   return (
     <div className="product-page-container">
       <div className="product-content">
@@ -67,7 +72,23 @@ const ProductPage = () => {
             <MobileDesignLogo />
             <OfferAndCart />
 
-            <button
+            <button className="cart-button" onClick={handleCartClick}>
+              <div className="cart-image">
+                <img
+                  className="shopping-basket"
+                  src={ShoppingBasket}
+                  alt="ShoppingBasket"
+                />
+                <p>My cart</p>
+              </div>
+              <img
+                className="forward-button"
+                src={ForwardButton}
+                alt="ForwardButton"
+              />
+            </button>
+
+            {/* <button
               className="cart-button"
               onClick={() => setIsCartVisible(!isCartVisible)}
             >
@@ -84,7 +105,7 @@ const ProductPage = () => {
                 src={ForwardButton}
                 alt="ForwardButton"
               />
-            </button>
+            </button> */}
           </div>
 
           {isCartVisible && <Cart />}
@@ -101,8 +122,9 @@ const ProductPage = () => {
                 <div key={categoryIndex}>
                   <h2 className="menu-category">{category}</h2>
                   <ul className="restaurant-menu-list">
-                    {restaurantMenu?.menuItems?.map((foodItem, itemIndex) =>
-                      foodItem.category === category ? (
+                    {restaurantMenu?.menuItems?.map((foodItem, itemIndex) => {
+                      console.log({ foodItem });
+                      return foodItem.category === category ? (
                         <li key={itemIndex} className="menu-list">
                           <div className="menu-item-details">
                             <div className="menu-item-name-description-price">
@@ -118,7 +140,7 @@ const ProductPage = () => {
                             </div>
                             <div className="menu-item-image-and-add-button">
                               <img
-                                src={foodItem.img}
+                                src={foodItem.image}
                                 alt={foodItem.name}
                                 className="menu-item-image"
                               />
@@ -133,8 +155,8 @@ const ProductPage = () => {
                             </div>
                           </div>
                         </li>
-                      ) : null
-                    )}
+                      ) : null;
+                    })}
                   </ul>
                 </div>
               )

@@ -240,6 +240,10 @@ const Collection =
 const CartCheckoutButton =
   "https://res.cloudinary.com/drkzizaiv/image/upload/v1732991951/Forward_Button_3_uo68uz.png";
 
+const appStore="https://res.cloudinary.com/drkzizaiv/image/upload/v1743158434/Download_on_the_App_Store_Badge.svg_p4gade.webp"
+
+const googlePlay="https://res.cloudinary.com/drkzizaiv/image/upload/v1743159331/googlePlaystore_q2txdq.png"
+
 export {
   LOGIN_HERO_IMAGE,
   LOGO_ORANGE,
@@ -326,4 +330,6 @@ export {
   Delivery,
   Collection,
   CartCheckoutButton,
+  appStore,
+  googlePlay
 };

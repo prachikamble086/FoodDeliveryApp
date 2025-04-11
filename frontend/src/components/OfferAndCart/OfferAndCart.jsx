@@ -14,11 +14,11 @@ const OfferAndCart = () => {
           </p>
         </div>
         <div className="location-and-cart">
-          <div className="location">
+          {/* <div className="location">
             <img src={Location} alt="Location" />
             <p className="address">Regent Street, A4, A4201, London</p>
             <a className="address">Change Location</a>
-          </div>
+          </div> */}
           {/* <Cart /> */}
         </div>
       </div>
@@ -29,10 +29,10 @@ const OfferAndCart = () => {
         </button>
         {/* <Cart /> */}
       </div>
-      <div className="mobile-design-location">
-        <img src={Location} alt="Location" />
-        <p className="address">Regent Street, A4, A4201, London</p>
-      </div>
+      {/* <div className="mobile-design-location"> */}
+      {/* <img src={Location} alt="Location" />
+      <p className="address">Regent Street, A4, A4201, London</p> */}
+      {/* </div> */}
     </div>
   );
 };

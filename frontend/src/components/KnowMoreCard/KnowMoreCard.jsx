@@ -11,14 +11,14 @@ const KnowMoreCard = () => {
         <div className="know-more-card-questions">
           <div className="know-more-card-header-and-questions">
             <div className="know-more-card-header">Know more about us!</div>
-            <div className="support">
+            {/* <div className="support">
               <button className="support-button-selected">
                 Frequent Questions
               </button>
               <button className="support-button">Who we are?</button>
               <button className="support-button">Partner Program</button>
               <button className="support-button">Help & Support</button>
-            </div>
+            </div> */}
           </div>
 
           <div className="questions-process-cards">
@@ -71,7 +71,7 @@ const KnowMoreCard = () => {
                   </p>
                 </div>
               </div>
-              <div className="order-process-para">
+              {/* <div className="order-process-para">
                 <p>
                   Order.UK simplifies the food ordering process. Browse through
                 </p>
@@ -82,7 +82,7 @@ const KnowMoreCard = () => {
                   checkout. Your delicious meal will be on its way to your
                   doorstep in no time!
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
